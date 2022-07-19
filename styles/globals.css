@@ -1,3 +1,9 @@
+:root{
+  --bg-color: #12181B;
+  --bg: linear-gradient(45deg, rgba(0,36,4,1) 0%, rgba(9,121,33,1) 47%, rgba(2,138,26,1) 73%, rgba(3,198,33,1) 93%, rgba(0,255,38,1) 100%);
+}
+
+
 html,
 body {
   padding: 0;
@@ -13,4 +19,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+html{
+  background: var(--bg-color) fixed;
 }
