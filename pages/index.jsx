@@ -3,11 +3,17 @@ import Image from 'next/image'
 import styles from '../components/index.module.css'
 import { collection, query, where, getDocs, orderBy, doc, getDoc, limit } from "firebase/firestore";
 import Thumbnail from '../components/thumbnail'
+import Intro from '../components/intro'
 import { firestore } from '../lib/firebase';
 import Project from '../components/project'
 import { BrowserRouter as Router } from 'react-router-dom';
 import kebabCase from 'lodash.kebabcase';
 import Contact from '../components/contact'
+import BIRDS from "vanta/dist/vanta.birds.min"
+import * as THREE from "three"
+import { useEffect, useRef, useState } from "react";
+import NET from "vanta/dist/vanta.net.min";
+
 export async function getServerSideProps({ }) {
   const ref = query(collection(firestore, "projects"), orderBy("datemade"), limit(4))
   const docsSnap = await getDocs(ref);
@@ -20,12 +26,28 @@ export async function getServerSideProps({ }) {
   }
 }
 
-
-
 export default function Home(projects) {
-
+  const [vantaEffect, setVantaEffect] = useState(0);
+  const vantaRef = useRef(null);
+  useEffect(() => {
+    if (!vantaEffect) {
+      setVantaEffect(
+        NET({
+          el: vantaRef.current,
+          THREE,
+          color: 0x14b679,
+          backgroundColor: 0x15173c,
+          maxDistance: 34.0,
+        })
+      );
+    }
+    return () => {
+      if (vantaEffect) vantaEffect.destory();
+    };
+  }, [vantaEffect]);
   return (
-    <main className={styles.main}>
+    <main className={styles.main} ref={vantaRef}>
+      <Intro/>
       <Thumbnail projects={projects} />
       <div className={styles.moreButtonContainer}>
         <button className={styles.moreButton}><h1 className={styles.moreButtonTitle}>More</h1></button>
