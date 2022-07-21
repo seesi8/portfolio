@@ -15,6 +15,7 @@
 }
 
 .container {
+    background: var(--bg-color) fixed;
     display: flex;
     justify-content: center;
 }

@@ -1,8 +1,11 @@
 import { auth, firestore, googleAuthProvider } from '../lib/firebase';
 import { UserContext } from '../lib/context';
+import { doc, getDoc, setDoc } from "firebase/firestore"; 
+import { signInWithPopup } from "firebase/auth";
 import { useEffect, useState, useCallback, useContext } from 'react';
 import debounce from 'lodash.debounce';
 import styles from '../components/signin.module.css'
+import { writeBatch } from "firebase/firestore"; 
 
 export default function Enter(props) {
   const { user, username } = useContext(UserContext);
@@ -20,7 +23,7 @@ export default function Enter(props) {
 // Sign in with Google button
 function SignInButton() {
   const signInWithGoogle = async () => {
-    await auth.signInWithPopup(googleAuthProvider);
+    await signInWithPopup(auth ,googleAuthProvider);
   };
 
   return (
@@ -56,11 +59,11 @@ function UsernameForm() {
     e.preventDefault();
 
     // Create refs for both documents
-    const userDoc = firestore.doc(`users/${user.uid}`);
-    const usernameDoc = firestore.doc(`usernames/${formValue}`);
+    const userDoc = doc(firestore, 'users', `${user.uid}`);
+    const usernameDoc = doc(firestore,'usernames',`${formValue}`);
 
     // Commit both docs together as a batch write.
-    const batch = firestore.batch();
+    const batch = writeBatch(firestore);
     batch.set(userDoc, { username: formValue, photoURL: user.photoURL, displayName: user.displayName });
     batch.set(usernameDoc, { uid: user.uid });
 
@@ -97,8 +100,10 @@ function UsernameForm() {
   const checkUsername = useCallback(
     debounce(async (username) => {
       if (username.length >= 3) {
-        const ref = firestore.doc(`usernames/${username}`);
-        const { exists } = await ref.get();
+        const ref = doc(firestore,'usernames',`${username}`);
+        const docSnap = await getDoc(ref)
+        const exists = docSnap.data();
+        console.log(exists)
         console.log('Firestore read executed!');
         setIsValid(!exists);
         setLoading(false);

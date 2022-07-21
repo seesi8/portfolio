@@ -1,0 +1,38 @@
+.contact{
+    color: white;
+    font-size: 3vw;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.contactForm,
+.contactFormButton{
+    width: 30vw;
+    background-color: transparent;
+    border-color: rgba(95, 242, 255, 0.6);
+    height: 2vw;
+    margin-bottom: 3rem;
+    font-size: 1.8rem;
+    border-width: .4rem;
+    min-height: 3rem;
+    font-weight: 600;
+    color: white;
+    padding-left: 1rem;
+    margin-left: calc(40vw / 3);
+}
+
+.contactFormButton{
+    padding-left: 0rem;
+}
+
+.contactFormButton:active{
+    background-color: rgba(95, 242, 255, 0.6);
+}
+.contactForms{
+    display: inline-block;
+}
+
+.contactMain{
+    overflow-x: hidden;
+}

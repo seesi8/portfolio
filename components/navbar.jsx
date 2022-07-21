@@ -3,7 +3,7 @@ import { UserContext } from '../lib/context'
 import styles from './Navbar.module.css'
 import Link from "next/link";
 
-export default function Page({ }) {
+export default function Navbar({ }) {
   const { user, username } = useContext(UserContext)
   return (
     <div className={styles.navbar}>

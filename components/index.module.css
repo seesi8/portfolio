@@ -1,0 +1,44 @@
+.moreButton{
+    width: 20vw;
+    height: 8vh;
+    background-color: #50C878;
+    border-color: #50C878;
+    border-width: .6rem;
+    margin-top: 3rem;
+    border-radius: 1rem;
+}
+
+.moreButtonContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.moreButtonTitle{
+    color: #303134;
+}
+
+.statement{
+    display: grid;
+    margin: 0;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.dotedHr{
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-top: 5px dashed;
+    color: white;
+}
+
+.statementText{
+    color: white;
+    font-size: 1.5rem;
+
+    padding-left: 6rem;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.main{
+    overflow-x: hidden;
+}
