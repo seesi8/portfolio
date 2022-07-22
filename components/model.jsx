@@ -145,7 +145,7 @@ export default function model( scale ) {
                 justifyContent: 'center',
                 overflow: 'visible'
             }}>
-                <Canvas style={{width: '40vw', overflow: 'visible'}} gl={{ antialias: true, toneMapping: NoToneMapping }} linear  dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 90 }}>
+                <Canvas style={{width: '40vw', height:'40vw', overflow: 'visible'}} gl={{ antialias: true, toneMapping: NoToneMapping }} linear  dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 90 }}>
                     <ambientLight />
                     <Model scale={scale} style={{overflow: 'visible'}}/>
                     <CameraControls />
