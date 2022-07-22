@@ -8,6 +8,7 @@ import Project from '../components/project'
 import { BrowserRouter as Router } from 'react-router-dom';
 import kebabCase from 'lodash.kebabcase';
 import Contact from '../components/contact'
+import Intro from '../components/intro'
 export async function getServerSideProps({ }) {
   const ref = query(collection(firestore, "projects"), orderBy("datemade"), limit(4))
   const docsSnap = await getDocs(ref);
@@ -26,6 +27,7 @@ export default function Home(projects) {
 
   return (
     <main className={styles.main}>
+      <Intro/>
       <Thumbnail projects={projects} />
       <div className={styles.moreButtonContainer}>
         <button className={styles.moreButton}><h1 className={styles.moreButtonTitle}>More</h1></button>
