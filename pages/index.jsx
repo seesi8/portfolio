@@ -16,6 +16,7 @@ export async function getServerSideProps({ }) {
   docsSnap.forEach((doc) => {
     projects.push(doc.data())
   });
+  console.log(projects)
   return {
     props: { projects: projects },
   }

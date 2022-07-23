@@ -88,7 +88,6 @@ function Element(props) {
     })
     const tex = useLoader(TextureLoader, props.image);
     const runhover = () => {
-        console.log("hi", ref)
         hover({ hovered: true, object: ref })
     }
     return (

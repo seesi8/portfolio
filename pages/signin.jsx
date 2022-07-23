@@ -6,7 +6,7 @@ import { useEffect, useState, useCallback, useContext } from 'react';
 import debounce from 'lodash.debounce';
 import styles from '../components/signin.module.css'
 import { writeBatch } from "firebase/firestore"; 
-
+import { useRouter } from 'next/router'
 export default function Enter(props) {
   const { user, username } = useContext(UserContext);
 
@@ -57,17 +57,18 @@ function UsernameForm() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-
+    const router = useRouter()
     // Create refs for both documents
     const userDoc = doc(firestore, 'users', `${user.uid}`);
     const usernameDoc = doc(firestore,'usernames',`${formValue}`);
 
     // Commit both docs together as a batch write.
     const batch = writeBatch(firestore);
-    batch.set(userDoc, { username: formValue, photoURL: user.photoURL, displayName: user.displayName });
+    batch.set(userDoc, { username: formValue, photoURL: user.photoURL, displayName: user.displayName, email: user.email , emailTime:  "5/29/2013"});
     batch.set(usernameDoc, { uid: user.uid });
 
     await batch.commit();
+    router.push(`/`)
   };
 
   const onChange = (e) => {
@@ -103,8 +104,6 @@ function UsernameForm() {
         const ref = doc(firestore,'usernames',`${username}`);
         const docSnap = await getDoc(ref)
         const exists = docSnap.data();
-        console.log(exists)
-        console.log('Firestore read executed!');
         setIsValid(!exists);
         setLoading(false);
       }

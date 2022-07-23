@@ -2,7 +2,6 @@ import styles from '../components/project.module.css'
 import ReactMarkdown from 'react-markdown'
 
 export default function Proj({ post }) {
-    console.log(post.title)
     const { title, slug, tldr, imgurl, datemade, description, github, livedemo } = post
     const openInNewTab = (url) => {
         const newWindow = window.open(url, '_blank', 'noopener,noreferrer')

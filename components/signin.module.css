@@ -16,6 +16,7 @@
 
 .container {
     background: var(--bg-color) fixed;
+    height: calc(100vh - 5rem);
     display: flex;
     justify-content: center;
 }

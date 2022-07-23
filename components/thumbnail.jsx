@@ -15,11 +15,9 @@ function ProjItem(item) {
   const router = useRouter()
   item = item.item
   const [loading, setLoading] = useState(false)
-  console.log(loading)
   const onClick = e => {
     e.preventDefault()
     setLoading(true)
-    console.log("loading")
     router.push(`/${item.slug}`)
   }
   return (

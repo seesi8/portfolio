@@ -22,7 +22,7 @@ export default function Navbar({ }) {
             }
           </h1>
         </div>
-        {user && <img className={styles.userPhoto} src={user.photoURL} />}
+        {user && <Link href="/signin"><img className={styles.userPhoto} src={user.photoURL} /></Link>}
       </div>
     </div>
   )
