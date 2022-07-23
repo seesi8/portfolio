@@ -21,17 +21,23 @@ export async function getServerSideProps({ }) {
     props: { projects: projects },
   }
 }
-
+import { useRouter } from 'next/router'
 
 
 export default function Home(projects) {
+  const router = useRouter()
+  const buttonClick = (e) => {
+    e.preventDefault()
+    
+    router.push("/posts")
 
+  }
   return (
     <main className={styles.main}>
       <Intro/>
-      <Thumbnail projects={projects} />
+      <Thumbnail projects={projects.projects} />
       <div className={styles.moreButtonContainer}>
-        <button className={styles.moreButton}><h1 className={styles.moreButtonTitle}>More</h1></button>
+        <button onClick={buttonClick} className={styles.moreButton}><h1 className={styles.moreButtonTitle}>More</h1></button>
       </div>
       <Contact />
       <hr className={styles.dotedHr}/>

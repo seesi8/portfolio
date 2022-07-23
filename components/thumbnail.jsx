@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function thumbnail({ projects }) {
   return (
     <div className={styles.container}>
-      {projects.projects ? projects.projects.map((proj) => <ProjItem item={proj} key={proj.slug} />) : null}
+      {projects ? projects.map((proj) => <ProjItem item={proj} key={proj.slug} />) : null}
     </div>
   )
 }

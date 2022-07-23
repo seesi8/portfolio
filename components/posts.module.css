@@ -1,0 +1,17 @@
+.main{
+    background: var(--bg-color) fixed;
+}
+
+.loadMoreButton{
+    width: 7rem;
+    height: 7rem;
+    border-width: 0rem;
+    border-radius: 5rem;
+    margin: 2rem;
+    background-color: #00A8B7;
+}
+
+.loadMoreButtonContainer{
+    display: flex;
+    justify-content: center;
+}
