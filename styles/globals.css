@@ -25,6 +25,24 @@ html{
 
 }
 
+.cirlceContainer{
+  position: absolute;
+    display: flex;
+    width: calc(50% - 2.5rem);
+    height: 200%;
+    justify-content: center;
+}
+
+.circle{
+  position: relative;
+  height: 100%;
+  border-radius: 10vw;
+  height: 10vw;
+  width: 10vw;
+  margin: 5rem;
+  background-color: white;
+}
+
 
 /* Loader */
 

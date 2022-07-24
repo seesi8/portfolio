@@ -1,7 +1,8 @@
 .list{
     list-style: none;
     display: block;
-    overflow: visible;
+    overflow: hidden;
+    height: 100%;
 }
 .item{
     color: #fff;
@@ -11,7 +12,7 @@
     background-color: #303134;
     clip-path: polygon(100% 0%,100% 90%, 55% 90%, 50% 100%, 50% 100%, 45% 90%,0 90%, 0 0);
     width: 60%;
-    overflow: visible;
+    overflow: hidden;
     padding-bottom: 2rem;
     margin: 0 auto 3rem auto;
 }
@@ -38,13 +39,13 @@
     border-color: red;
     border-style: dashed;
     border-width: .0rem;
-    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='1' ry='1' stroke='white' stroke-width='4' stroke-dasharray='15%2c 50' stroke-dashoffset='27' stroke-linecap='square'/%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='1' ry='1' stroke='white' stroke-width='4' stroke-dasharray='5%2c 20' stroke-dashoffset='27' stroke-linecap='square'/%3e%3c/svg%3e");
 }
 
 .lineContainer{
     position: absolute;
     display: flex;
     width: calc(50% - 2.5rem);
-    height: 88%;
+    height: 200%;
     justify-content: center;
 }
