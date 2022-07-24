@@ -29,9 +29,9 @@ html{
 /* Loader */
 
 .loader {
-  position: relative;
+  position: fixed;
   top: 50%;
-  left: 49.1%;
+  left: 49.4%;
   border: 10px solid rgba(3,198,33,1); 
   border-top: 10px solid rgba(9,121,33,1); 
   border-radius: 50%;
@@ -46,7 +46,7 @@ html{
 }
 
 .loaderContainer{
-  position: fixed;
+  position: absolute;
   height: 100%;
   width: 100%;
 }
