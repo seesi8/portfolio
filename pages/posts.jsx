@@ -21,7 +21,7 @@ export async function getServerSideProps({ }) {
 }
 let cursor = ""
 
-export default function posts(projects) {
+export default function Posts(projects) {
     const [posts, setPosts] = useState(projects.projects);
     const [postsEnd, setPostsEnd] = useState(false);
     const [loading, setLoading] = useState(false);
