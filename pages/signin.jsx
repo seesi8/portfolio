@@ -55,7 +55,7 @@ function UsernameForm() {
 
   const { user, username } = useContext(UserContext);
 
-  const onSubmit = async (e) => {
+  const OnSubmit = async (e) => {
     e.preventDefault();
     const router = useRouter()
     // Create refs for both documents
@@ -115,7 +115,7 @@ function UsernameForm() {
     !username && (
       <section>
         <h3 className={styles.title}>Choose Username</h3>
-        <form onSubmit={onSubmit} className={styles.usernameForm}>
+        <form onSubmit={OnSubmit} className={styles.usernameForm}>
           <input className={styles.usernameInput} name="username" placeholder="myname" value={formValue} onChange={onChange} />
           <button className={styles.choose} type="submit" disabled={!isValid}>
             Choose
