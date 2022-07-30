@@ -1,0 +1,95 @@
+.title{
+    font-size: calc(1.5vw + 3rem);
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+.container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.dotedHr{
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-top: 5px dashed;
+    color: white;
+}
+.mainimg{
+    width: 100%;
+
+}
+.tldr{
+    font-size: 1.3rem;
+    color: gray;
+    text-align: justify;
+}
+
+.main{
+    background: var(--bg-color) fixed;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+.dateMade,
+.liveDemo,
+.github{
+    width: fit-content;
+    margin: 1rem 0rem 1rem 0rem;
+    color: Black;
+    font-size: 1.5REM;
+}
+.dateMade:hover{
+    cursor: text;
+}
+
+.githubButton:hover{
+    background-color: #868585;
+}
+.liveDemoButton:hover{
+    background-color: #c88c50;
+}
+
+.dateMadeButton,
+.liveDemoButton,
+.githubButton{
+    display: flex;
+    justify-content: center;
+    margin-right: 3rem;
+    border-width: .3rem;
+    width: calc(33vw - 5rem);
+    border-radius: 1rem;
+    border-color: #50C878;
+    background-color: transparent;
+}
+
+.dateMadeButton:active,
+.dateMadeButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: initial;
+    border-width: .3rem;
+}
+
+.dateMadeButton{
+    
+    background-color: #50C878;
+}
+.liveDemoButton{
+    border-color: #c88c50;
+}
+
+.githubButton{
+    border-color: #868585;
+}
+
+.toolButtons{
+    display: inline-flex;
+}
+
+.description{
+    text-align: justify;
+    color: grey;
+    font-size: 1.2rem;
+}

@@ -1,0 +1,88 @@
+.title {
+    font-family: Georgia;
+    font-size: xxx-large;
+    color: white;
+}
+
+.usernameInput {
+    background-color: white;
+    border: none;
+    width: 10vw;
+    filter: drop-shadow(2px 2px 0px);
+    height: 5vh;
+    font-size: x-large;
+    border-radius: 1rem 0rem 0rem 1rem;
+}
+
+.container {
+    background: var(--bg-color) fixed;
+    height: calc(100vh - 5rem);
+    display: flex;
+    justify-content: center;
+}
+
+.usernameForm {
+    display: flex;
+    justify-content: center;
+}
+
+.choose {
+    color: black;
+    font-size: larger;
+    display: inline;
+    width: 10rem;
+    background-color: #27c449;
+    border-radius: 0rem 1rem 1rem 0rem;
+}
+
+button.choose:hover,
+button.googleSignOut:hover,
+button.googleSignIn:hover {
+    border: 1px solid #0099cc;
+    background-color: #00aacc;
+    color: #ffffff;
+}
+
+button.choose:disabled,
+button.choose[disabled] {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}
+
+.googleSignOut{
+    min-width: 20rem;
+    background-color: #c42727;
+    width: 25vw;
+    height: 25vh;
+    margin: 37.5vh;
+    border: none;
+    border-radius: 2rem;
+    font-size: xxx-large;
+}
+
+.signIn{
+    text-align: center;
+    color: white;
+}
+
+.googleSignInContainer{
+}
+
+.googleSignIn{
+    background-color: white;
+    display: flex;
+    width: 20vw;
+    border-radius: .6rem;
+    height: 5vh;
+}
+
+.googleSignInLogo{
+    height: 4vh;
+}
+
+.googleSignInText{
+    font-size: 2vh;
+    margin: auto;
+    font-family: Cambria;
+}

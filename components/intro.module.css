@@ -1,0 +1,32 @@
+.introName{
+    color: white;
+    margin-left: 6rem;
+    font-size: 7.65vw;
+    width: 44vw;
+    /*white-space: nowrap*/
+}
+
+.intro{
+    display: inline-flex;
+    overflow: visible;
+    grid-template-columns: 30% 70%;
+}
+
+@media (orientation: portrait) {
+    .introName{
+        color: white;
+        margin-left: 0rem !important;
+        font-size: 7vw;
+        width: 100vw;
+        text-align: center;
+    }
+    .intro{
+        display: flex;
+        justify-content: center;
+    }
+    .intro{
+        display: block;
+        overflow: visible;
+        grid-template-columns: 30% 70%;
+    }
+}
