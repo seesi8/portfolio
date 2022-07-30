@@ -1,4 +1,4 @@
-import styles from './timeline.module.css'
+import styles from "./timeline.module.css"
 
 export default function timeline({ }) {
     return (
@@ -11,7 +11,7 @@ export default function timeline({ }) {
                 <li className={styles.item}>
                     <h1 className={styles.itemTitle}>I made this website</h1>
                     <p className={styles.itemDate}>8/18/22</p>
-                    <h2 className={styles.itemBody}>In my cource of wanting to become a better programmer I wanted to learn a js framework. Because of it's popularity i choose react. I did some other projects with it before staritng this page</h2>
+                    <h2 className={styles.itemBody}>In my cource of wanting to become a better programmer I wanted to learn a js framework. Because of its popularity i choose react. I did some other projects with it before staritng this page</h2>
                 </li>
                 <li className={styles.item}>
                     <h1 className={styles.itemTitle}>Quarentine started</h1>
