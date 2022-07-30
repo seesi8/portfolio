@@ -37,6 +37,10 @@ export default function Home(projects) {
   }
   return (
     <main className={styles.main}>
+      <Head>
+        <title>Samuel Liebert</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Intro />
       <Thumbnail projects={projects.projects} />
       <div className={styles.moreButtonContainer}>
