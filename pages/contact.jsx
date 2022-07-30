@@ -4,6 +4,7 @@ import { rgba, darken } from 'polished';
 import React, { useState, useEffect, useRef } from 'react'
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
+import Head from 'next/head'
 import { UserContext } from '../lib/context'
 import { firestore } from '../lib/firebase'
 import { doc, getDoc, setDoc } from "firebase/firestore";
@@ -92,7 +93,7 @@ export default function Page({ }) {
                 toast.error('Sorry we have to limit you to one email per day')
             }
         }
-        else{
+        else {
             toast.error('Account required for message')
         }
 
@@ -100,6 +101,10 @@ export default function Page({ }) {
     const form = useRef();
     return (
         <main className={styles.main}>
+            <Head>
+                <title>Contact Me</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
             <div className={styles.contact}>
                 <h1 style={{ textShadow: `${longShadow(rgba(95, 242, 255, 0.6), 4000, length,)}` }}>Contact Me</h1>
             </div>

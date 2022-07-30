@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import kebabCase from 'lodash.kebabcase';
 
 export default function Page({ }) {
+    /*
     let title = "This is a demopost" + uuidv4().toString()
     const onClick = async () => {
         const Demopost = new demopost(title)
@@ -41,4 +42,5 @@ export default function Page({ }) {
             <button onClick={onClick2} style={{width:'10vw', height:'10vh'}}></button>
         </main>
     )
+    */
 }

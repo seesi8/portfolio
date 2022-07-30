@@ -1,12 +1,13 @@
 import { auth, firestore, googleAuthProvider } from '../lib/firebase';
 import { UserContext } from '../lib/context';
-import { doc, getDoc, setDoc } from "firebase/firestore"; 
+import { doc, getDoc, setDoc } from "firebase/firestore";
 import { signInWithPopup } from "firebase/auth";
 import { useEffect, useState, useCallback, useContext } from 'react';
 import debounce from 'lodash.debounce';
 import styles from '../components/signin.module.css'
-import { writeBatch } from "firebase/firestore"; 
+import { writeBatch } from "firebase/firestore";
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 export default function Enter(props) {
   const { user, username } = useContext(UserContext);
 
@@ -15,6 +16,10 @@ export default function Enter(props) {
   // 3. user signed in, has username <SignOutButton />
   return (
     <main className={styles.container}>
+      <Head>
+        <title>Sign-In</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       {user ? !username ? <UsernameForm /> : <SignOutButton /> : <SignInButton />}
     </main>
   );
@@ -23,14 +28,14 @@ export default function Enter(props) {
 // Sign in with Google button
 function SignInButton() {
   const signInWithGoogle = async () => {
-    await signInWithPopup(auth ,googleAuthProvider);
+    await signInWithPopup(auth, googleAuthProvider);
   };
 
   return (
     <div className={styles.googleSignInContainer}>
       <h1 className={styles.signIn}>Sign In</h1>
       <button className={styles.googleSignIn} onClick={signInWithGoogle}>
-        <img src={'/google.png'}  className={styles.googleSignInLogo}/> 
+        <img src={'/google.png'} className={styles.googleSignInLogo} />
         <h4 className={styles.googleSignInText}>Sign in with Google</h4>
       </button>
     </div>
@@ -60,11 +65,11 @@ function UsernameForm() {
     const router = useRouter()
     // Create refs for both documents
     const userDoc = doc(firestore, 'users', `${user.uid}`);
-    const usernameDoc = doc(firestore,'usernames',`${formValue}`);
+    const usernameDoc = doc(firestore, 'usernames', `${formValue}`);
 
     // Commit both docs together as a batch write.
     const batch = writeBatch(firestore);
-    batch.set(userDoc, { username: formValue, photoURL: user.photoURL, displayName: user.displayName, email: user.email , emailTime:  "5/29/2013"});
+    batch.set(userDoc, { username: formValue, photoURL: user.photoURL, displayName: user.displayName, email: user.email, emailTime: "5/29/2013" });
     batch.set(usernameDoc, { uid: user.uid });
 
     await batch.commit();
@@ -101,7 +106,7 @@ function UsernameForm() {
   const checkUsername = useCallback(
     debounce(async (username) => {
       if (username.length >= 3) {
-        const ref = doc(firestore,'usernames',`${username}`);
+        const ref = doc(firestore, 'usernames', `${username}`);
         const docSnap = await getDoc(ref)
         const exists = docSnap.data();
         setIsValid(!exists);
