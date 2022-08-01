@@ -14,7 +14,6 @@
 }
 .cardImage{
     overflow: hidden;
-    width: calc(50vw - 7rem);
     padding: 2rem 2rem 0rem 2rem;
     height: fit-content;
 }
@@ -24,6 +23,7 @@
     margin: 1rem;
     background-color: #303134;
     width: calc(50vw - 7rem);
+    min-width: 20rem;
     overflow: auto;
     height: fit-content;
 }
@@ -42,7 +42,7 @@
     float: right;
     display: block;
     box-sizing:border-box;
-    width: fit-content;
+    min-width: fit-content;
     margin: .5rem 2rem 0rem 2rem;
     display: inline;
     height: 3rem;
@@ -51,7 +51,6 @@
     border-width: .4rem;
     background-color: #50C878;
     border-color: #50C878;
-    padding: .5rem 2rem .5rem 2rem;
     border-radius: 1rem;
     flex-grow: 1;
 }

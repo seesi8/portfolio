@@ -5,9 +5,6 @@ export default function timeline({ }) {
         <>
             <ul className={styles.list}>
                 <h1 className={styles.listTitle}>Timeline Of My Life</h1>
-                <div className={styles.lineContainer}>
-                    <div className={styles.line}></div>
-                </div>
                 <li className={styles.item}>
                     <h1 className={styles.itemTitle}>I made this website</h1>
                     <p className={styles.itemDate}>8/18/22</p>

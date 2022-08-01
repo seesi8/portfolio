@@ -3,6 +3,7 @@
     display: block;
     overflow: hidden;
     height: 100%;
+    padding: 0;
 }
 .item{
     color: #fff;
@@ -13,7 +14,7 @@
     clip-path: polygon(100% 0%,100% 90%, 55% 90%, 50% 100%, 50% 100%, 45% 90%,0 90%, 0 0);
     width: 60%;
     overflow: hidden;
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
     margin: 0 auto 3rem auto;
 }
 .itemTitle{
