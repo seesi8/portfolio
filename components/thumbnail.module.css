@@ -62,5 +62,7 @@
 }
 
 .cardViewButtonReadMore{
+    color: black;
+    font-weight: bold;
     margin: 0;
 }

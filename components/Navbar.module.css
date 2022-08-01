@@ -26,6 +26,7 @@ div.navbar{
 }
 
 .rightColumn{
+    padding-right: 1rem;
     display: flex;
     justify-content: right;
 }
