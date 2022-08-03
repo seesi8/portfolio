@@ -5,11 +5,11 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default async function dbHandler(req, res) {
   const query = req.query;
-  const { value, domain, password } = query;
+  const { domain, password } = query;
   if (password.slice(1) / password.charAt(0) == 940358) {
     const docRef = await setDoc(doc(firestore, "knowledge", uuidv4()), {
-
-      ...query
+        domain: domain,
+        body: req.body.stuff
     });
     res.status(200).json({ status: true })
   }
