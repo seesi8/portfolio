@@ -1,4 +1,4 @@
-
+import styles from '../components/knowledge.module.css'
 import { v4 as uuidv4 } from 'uuid';
 import Knowledge from '../components/knowledge';
 import { collection, query, where, getDocs, orderBy, doc, getDoc, limit } from "firebase/firestore";
@@ -22,8 +22,8 @@ export async function getServerSideProps({ }) {
 
 export default function knowledgePortfolio({ items }) {
     return (
-        <main>
-            {items ? items.map((item) => <><Knowledge theKnoledge={item} key={uuidv4()} /></>) : null}
+        <main className={styles.knowlage}>
+            {items ? items.map((item) => <><Knowledge theKnowledge={item} key={uuidv4()} /></>) : null}
         </main>
     )
 }
