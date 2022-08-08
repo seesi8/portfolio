@@ -2,9 +2,11 @@ import { collection, addDoc, setDoc , doc, getDocs, deleteDoc, query, orderBy, l
 import { firestore, firebase, serverTimestamp  } from '../lib/firebase';
 import { v4 as uuidv4 } from 'uuid';
 import kebabCase from 'lodash.kebabcase';
+import { getStorage, ref, uploadBytes } from "firebase/storage";
+import React from "react";
 
 export default function Page({ }) {
-    /*
+    
     let title = "This is a demopost" + uuidv4().toString()
     const onClick = async () => {
         const Demopost = new demopost(title)
@@ -36,11 +38,32 @@ export default function Page({ }) {
             this.datemade= new Date().toString()
         }
     }
+
+    const UploadJson = async (e) => {
+        e.preventDefault();
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const text = e.target.result;
+          const obj = JSON.parse(text)
+          if(obj.title && obj.tldr && obj.imgurl && obj.description && obj.github && obj.livedemo && obj.datemade){
+            let Demopost = {...obj}
+            Demopost.slug = encodeURI(kebabCase(obj.title))
+            console.log(Demopost)
+            const docRef = setDoc(doc(firestore, "projects", Demopost.slug), {
+                ...Demopost
+            });
+          }else{
+            console.log("wrong")
+          }
+
+        };
+        reader.readAsText(e.target.files[0]);
+    }
+
     return (
-        <main>
-            <button onClick={onClick} style={{width:'10vw', height:'10vh'}}></button>
-            <button onClick={onClick2} style={{width:'10vw', height:'10vh'}}></button>
+        <main style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
+            <input type="file" onChange={UploadJson}/>
         </main>
     )
-    */
+    
 }

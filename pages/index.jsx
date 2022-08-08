@@ -72,7 +72,7 @@ export default function Home(projects) {
   const buttonClick = (e) => {
     e.preventDefault()
 
-    router.push("/posts")
+    router.push("/projects")
 
   }
   return (

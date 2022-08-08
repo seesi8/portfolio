@@ -74,10 +74,11 @@ export default function Page({ }) {
 
     const sendEmail = async (e) => {
         e.preventDefault();
-        const docRef = doc(firestore, "users", user.uid);
-        const docSnap = await getDoc(docRef);
-        let regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if (!user) {
+        if (user) {
+            const docRef = doc(firestore, "users", user.uid);
+            const docSnap = await getDoc(docRef);
+            let regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        
             if (getDifferenceInHours(new Date(docSnap.data().emailTime), new Date()) > 24) {
                 if (email.match(regexEmail)) {
                     toast.success('Message Sent')

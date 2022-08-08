@@ -3,19 +3,28 @@ import { collection, query, where, getDocs, doc, getDoc } from "firebase/firesto
 import { useState } from 'react';
 import Project from '../components/project'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 export default function Slug({ proj }) {
-    console.log(proj)
-    return (
-        <main>
-            <Head>
-                <title>{proj.title}</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-            </Head>
+    if(proj != "404"){
+        return (
+            <main>
+                <Head>
+                    <title>{proj.title}</title>
+                    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                </Head>
+                <div>
+                    <Project post={proj}></Project>
+                </div>
+            </main>
+        )
+    }else{
+        return (
             <div>
-                <Project post={proj}></Project>
+                <h1>404 : No Page Found</h1>
             </div>
-        </main>
-    )
+        )
+    }
+
 }
 
 export async function getStaticProps({ params }) {
@@ -26,6 +35,7 @@ export async function getStaticProps({ params }) {
     if (docSnap.data()) {
         data = docSnap.data()
     }
+    !data && (data = "404")
     return {
         props: { proj: data },
         revalidate: 300,
@@ -41,6 +51,6 @@ export async function getStaticPaths() {
     });
     return {
         paths,
-        fallback: false
+        fallback: 'blocking'
     }
 }

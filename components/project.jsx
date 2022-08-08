@@ -19,7 +19,7 @@ export default function Proj({ post }) {
             <div className={styles.toolButtons}>
                 <button className={styles.dateMadeButton}><a className={styles.dateMade}>Made on: {datemade}</a></button>
                 <button className={styles.liveDemoButton} onClick={() => openInNewTab(livedemo)}><a className={styles.liveDemo}>Visit Live Demo</a></button>
-                <button className={styles.githubButton} onClick={() => openInNewTab(github)}><a className={styles.github}>Visit Live Demo</a></button>
+                <button className={styles.githubButton} onClick={() => openInNewTab(github)}><a className={styles.github}>Visit Github </a></button>
             </div>
             <hr className={styles.dotedHr} />
             <p className={styles.description}>{description}</p>

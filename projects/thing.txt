@@ -1,0 +1,1 @@
+\n b = blackness start in project \n bw = blacknes start when wide \n bt = blackness start when thin \n w = width when wide \n t = width when thin \n b - bw = 
