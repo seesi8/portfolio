@@ -30,10 +30,8 @@ function ProjItem(item) {
         <img className={styles.cardImage} src={item.imgurl} alt="" />
       </div>
       <div className="cardTools">
-        <h2 className={styles.cardTitle}>{item.title}</h2>
-
         <button onClick={onClick} className={styles.cardViewButton}><h3 className={styles.cardViewButtonReadMore}>Read More</h3></button>
-
+        <h2 className={styles.cardTitle}>{item.title}</h2>
       </div>
     </div>
   )
