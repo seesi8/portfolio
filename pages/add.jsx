@@ -4,9 +4,10 @@ import { v4 as uuidv4 } from 'uuid';
 import kebabCase from 'lodash.kebabcase';
 import { getStorage, ref, uploadBytes } from "firebase/storage";
 import React from "react";
+import { useState } from "react";
 
 export default function Page({ }) {
-    
+    const [done, setDone] = useState(false)
     let title = "This is a demopost" + uuidv4().toString()
     const onClick = async () => {
         const Demopost = new demopost(title)
@@ -52,17 +53,20 @@ export default function Page({ }) {
             const docRef = setDoc(doc(firestore, "projects", Demopost.slug), {
                 ...Demopost
             });
+            setDone(true)
           }else{
             console.log("wrong")
           }
 
         };
+
         reader.readAsText(e.target.files[0]);
     }
 
     return (
         <main style={{display: "flex", alignItems: "center", justifyContent: "center"}}>
             <input type="file" onChange={UploadJson}/>
+            <h1>{done ? "done" : " not done"}</h1>
         </main>
     )
     
