@@ -1,0 +1,11 @@
+{
+    "datemade" : "8/6/22",
+    "description" : " While reading a book, read about keeping a knowledge portfolio. I liked this idea, but it was talking figuratively like learning new things and absorbing new information. It was a good idea and I was worried about forgetting things, so I wanted a way to look back and relearn things. I created an extension that made an icon on the bottom of a code snippet. When you checked the icon it would add the item to a database where you can view on a website. It was a very fun project and taught me about the permissions that extensions have to the website. I also improved my problem solving and how to pass params back and forth depending on permissions and when the project is initialized. I had a lot of fun with this project and I think that I will find it useful in the future. I started by injecting HTML code into the bottom of each element. I then continued by using the data of that html element along with data from the chrome API to create a POST request. The post request was to my own website and allowed me to upload the data to my database. Which I then used to interpret it into a page on my portfolio.",
+    "github" : "https://github.com/seesi8/knowlage-portfolio",
+    "imgurl" : "https://firebasestorage.googleapis.com/v0/b/portfolio-dedd9.appspot.com/o/71ff8fd5-f8d6-4b5f-a611-7107252359d3?alt=media&token=9fc1e23b-c052-4873-8fb3-cdf3573330db",
+    "title" : "Knowledge Portfolio Chrome Extension Made With Firebase, Chrome API, and Custom Api Post Routes",
+    "tldr" : "This project was inspired by the book: the pragmatic programmer. I was inspired to create a way to save knowledge for letters. I choose to make a chrome extension that way saving the data would be as convenient as possible. I used HTML injection to add a button to the button of pre-elements. I then used a JSON POST request to my own next.js api route which uploaded it to a database. Source code is linked in the github, and the livedemo is to my knowledge-portfolio page.",
+    "livedemo" : "https://samueldoes.dev/knolage-portfolio"
+ }
+  
+ 

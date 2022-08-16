@@ -55,7 +55,7 @@ export async function getServerSideProps({ }) {
   });
   console.log(projects)
   return {
-    props: { projects: projects },
+    props: { projects: projects.reverse() },
   }
 }
 import { useRouter } from 'next/router'

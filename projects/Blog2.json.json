@@ -1,9 +1,0 @@
-{
-    "datemade" : "7/18/22",
-    "description" : " After finisheing ly react course I still felt like I did not fully understand the language. All of the react projects I had none were smaller and tought me fundimentals, but not much sytax. While fundimentals are important if I wanted to create a truly independant piece of code I would need to learn the syntax. Luckely the class i was taking had a next react firevase course. It was a blog. Much like the one I created earlier, but this one tought me better ways to write my code, and it allowed me to make this project one kf my favorite classes I had taken. It seemed like the next step to my previous project only this time I did not have much intention of using this project outside of using it as a learning opportunity. It worked building this website tought me what I needed to know and allowed my to build the portfolio website you are reading this on. ",
-    "github" : "https://github.com/seesi8/Blog2",
-    "imgurl" : "https://firebasestorage.googleapis.com/v0/b/portfolio-dedd9.appspot.com/o/09b508a9-b3d7-4bfd-bb6b-63985566084e?alt=media&token=e3be64f8-b000-4cee-a73f-13eda6326060",
-    "title" : "Blog I Made Using React And Next.Js With Firebase And Data Management",
-    "tldr" : "This website blog were anyone can upload or post. It was built using react and next.js. Some of it is rendered on client, Some on the server and some using incrimental static regeneration. This allows the data to be rendered on the server, but check to make sure that it is right every so ofter. This was made using the will extent of what next.js had to offer.",
-    "livedemo" : "blog2.samueldoes.dev"
-}

@@ -1,9 +1,0 @@
-{
-    "datemade" : "7/19/22",
-    "description" : " While reading a book a read about keeping a knolage portfolio. I liked this idea, but it was talking figuratively. ",
-    "github" : "https://github.com/seesi8/knolage-portfolio",
-    "imgurl" : "https://firebasestorage.googleapis.com/v0/b/portfolio-dedd9.appspot.com/o/9945c869-9345-43a3-bd6a-ad03cbed52b1?alt=media&token=a5fd128b-55ff-483c-bf78-51bb9d249cc1",
-    "title" : "This Website: Made Using React, Node.js, and Firebase",
-    "tldr" : "This project is the website you are currently on. I was made using React, Next.js, and Firebase. It took just over a week of active time working on It. It is fully reactive to work on mobile and other small devices. It has a contact me page (samueldoes.dev/contact), posts projects (samueldoes.dev/projects), and even a interactive 3d model (samueldoes.dev), All made with React. Source Code on the github, and you are currently seeing the live demo.",
-    "livedemo" : "samueldoes.dev"
-}

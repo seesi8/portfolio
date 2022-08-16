@@ -1,0 +1,12 @@
+{
+    "datemade" : "7/19/22",
+    "description" : " I wanted to start learning React and how to start making more professional websites.I chose React for its popularity and compatibility with many packages. I was also used to node.js at this point so I understood the way that a backend and frontend functioned together. After deciding that I wanted to use react I started looking for tutorials. I then decided on fireship.io. There were many tutorials and all for a normal price. I started the tutorial there and fixed some bugs I experienced. The coolest part of the project was that it was a PWA. This means that it was able to run offline along with a bunch of other features. I was fascinated by the idea of a website being able to run offline. I have tried to incorporate this into my projects ever since (Only when it made sense). Once I finished with the course I continued to edit the project, And I made it better. I changed up the styles and also fixed some bugs that were in the original code. It was a very fun project and it taught me the fundamentals of react and PWAs and i have used those same fundamentals ever since",
+    "github" : "https://github.com/seesi8/Memento",
+    "imgurl" : "https://firebasestorage.googleapis.com/v0/b/portfolio-dedd9.appspot.com/o/285cd88f-049e-4c7a-b271-c20e4a8fc188?alt=media&token=e7686747-6a99-4a1e-985f-c78f4edb334f",
+    "title" : "Memory PWA Game",
+    "tldr" : "This website is a PWA (progressive web app) . The same features implemented are the offline usage along with specialized icons. This website is made using pure React. I enjoyed this project. It is available on github for anyone who wants to see the source code and the live demo for the project is linked below. This project is a starting point for all of my other react projects.",
+    "livedemo" : "https://memento.samueldoes.dev"
+ }
+  
+ 
+ 

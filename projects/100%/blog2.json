@@ -1,0 +1,11 @@
+{
+    "datemade" : "7/15/22",
+    "description" : "Continuing to try to learn to react to one big tutorial I followed was one on how to make a blog. A tutorial on how to make a blog is the perfect project because it teaches you about backend data structure and how to manage the posts and data that your site is supporting. It is also a perfect project because it teaches you about user authentication. Lastly it teaches you the right practices and security measures that should be taken place in order to make a fully functional blog. I use these skills that this tutorial taught me and continue to use the same practices and skills in my future projects. Some of the key features of this blog was the ability to authenticate users through Google. This was done using the firebase authentication API. It also uses firebase's firestore database. This is a document based database that makes it very easy to store data such as blog posts. This site is not used currently, but it is still deployed on vercel. One of the other main features of this blog is that it has the ability to have a paginated homepage with database cursors and constantly generating results. It is also made with ISR (incremental static regeneration) and SSR (Server Side Rendering) it is also made to be as SEO (Search engine optimized) as possible. I think that this was one of my biggest learning projects that i have ever done",
+    "github" : "https://github.com/seesi8/blog2",
+    "imgurl" : "https://firebasestorage.googleapis.com/v0/b/portfolio-dedd9.appspot.com/o/2908991b-9430-40bb-a160-fc959a978188?alt=media&token=8b9835c7-a019-4d2f-b6dd-2a9888738e8b",
+    "title" : "Blog Made Using React, Firebase, And Next.js. Include SEO, SSR, and ISR",
+    "tldr" : "This was a blog I made following a tutorial on firebase.io. It uses SEO features like metadata to make it search engine optimized. It also uses SSR and ISR to make a responsive website without it being as taxing as running it on client.I continue to use these same technologies to this very day and i use it to make sure my projects are responsive and preformant.",
+    "livedemo" : "blog2.samueldoes.dev"
+ }
+ 
+ 
