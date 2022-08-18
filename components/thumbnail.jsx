@@ -2,13 +2,12 @@ import styles from '../components/thumbnail.module.css'
 import Loader from '../components/loader'
 import React, { useState } from 'react';
 import { useRouter } from 'next/router'
-import Link from 'next/link';
-
+import { v4 as uuidv4 } from 'uuid';
 
 export default function thumbnail({ projects }) {
   return (
     <div className={styles.container}>
-      {projects ? projects.map((proj) => <><ProjItem item={proj} key={proj.slug} /></>) : null}
+      {projects ? projects.map((proj) => <><ProjItem item={proj} key={uuidv4()} /></>) : null}
     </div>
   )
 }
@@ -25,7 +24,7 @@ function ProjItem(item) {
   }
   return (
     <div className={styles.card}>
-      <Loader show={loading} />
+      <Loader key={uuidv4()} show={loading} />
       <div className={styles.cardImageContainer}>
         <img className={styles.cardImage} src={item.imgurl} alt="" />
       </div>

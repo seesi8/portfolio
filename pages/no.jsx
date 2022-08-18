@@ -1,3 +1,5 @@
+//some projects dont have a live demo, but still needs a link
+
 export default function Page({ }) {
   return (
     <main>

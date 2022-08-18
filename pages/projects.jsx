@@ -1,54 +1,80 @@
-import { collection, query, where, getDocs, orderBy, startAt, doc, getDoc, limit } from "firebase/firestore";
+import { Timestamp, collection, query, getDocs, orderBy,startAfter, startAt, doc, getDoc, limit } from "firebase/firestore";
 import Thumbnail from '../components/thumbnail'
 import { firestore } from '../lib/firebase';
 import Loader from '../components/loader'
+import {fixDate} from '../lib/hooks'
 import { useState } from "react";
 import styles from '../components/posts.module.css'
 import Head from 'next/head'
-import { position } from "polished";
 
 const LIMIT = 4;
 
 export async function getServerSideProps({ }) {
-    const ref = query(collection(firestore, "projects"), orderBy("datemade"), limit(LIMIT))
-    const docsSnap = await getDocs(ref);
+
     let projects = []
-    docsSnap.forEach((doc) => {
+
+    const projectsRef = query(collection(firestore, "projects"), orderBy("datemade", "desc"), limit(LIMIT))
+    const projectsSnap = await getDocs(projectsRef);
+    projectsSnap.forEach((doc) => {
         projects.push(doc.data())
     });
+
+    //Format the date into a serializeable object
+    projects = fixDate(projects)
+
     return {
         props: { projects: projects },
     }
+
 }
-let cursor = ""
+
+async function getMorePosts(cursor) {
+
+    let newPosts = []
+    console.log(cursor)
+    const projectsQuery = query(collection(firestore, "projects"), orderBy("datemade", "desc"), startAfter(new Date(cursor)), limit(LIMIT))
+    const projectsQuerySnap = await getDocs(projectsQuery);
+
+    
+
+    projectsQuerySnap.forEach((doc) => {
+        newPosts.push(doc.data())
+    });
+
+    newPosts = fixDate(newPosts)
+
+    //cursor is off by one so account for it
+
+    return (
+        newPosts
+    )
+}
 
 export default function Posts(projects) {
     const [posts, setPosts] = useState(projects.projects);
     const [postsEnd, setPostsEnd] = useState(false);
     const [loading, setLoading] = useState(false);
-    const getMorePosts = async () => {
+
+    const handleClick = async () => {
+
         setLoading(true);
-        cursor = posts[posts.length - 1].datemade
+
+        let cursor = new Date(posts[posts.length - 1].datemade)
         console.log(cursor)
+        console.log(posts[posts.length - 1].datemade)
+        const newPosts = await getMorePosts(cursor)
 
-        const last = posts[posts.length - 1];
-
-        const thequery = query(collection(firestore, "projects"), orderBy("datemade"), startAt(cursor), limit(LIMIT + 1))
-        let newPosts = []
-        const querySnap = await getDocs(thequery);
-        querySnap.forEach((doc) => {
-            newPosts.push(doc.data())
-        });
-        newPosts.shift()
-        const postsRef = posts;
-        setPosts(postsRef.concat(newPosts));
+        const postsRef = posts.concat(newPosts);
+        setPosts(postsRef);
 
         if (newPosts.length < LIMIT) {
             setPostsEnd(true);
         }
-        cursor = posts[posts.length - 1].datemade
+        cursor = new Date(posts[posts.length - 1].datemade)
+
         setLoading(false);
     };
+
     return (
         <main className={styles.main}>
             <Head>
@@ -57,8 +83,11 @@ export default function Posts(projects) {
             </Head>
             <Loader show={loading} />
             <Thumbnail projects={posts} />
-            <div className={styles.loadMoreButtonContainer}>
-                <button className={styles.loadMoreButton} onClick={getMorePosts}>Load More</button>
+            <div className={styles.container}>
+                <h1 className={styles.noMorePosts}>{postsEnd && "No More Posts ..."}</h1>
+            </div>
+            <div className={styles.container}>
+                <button className={styles.loadMoreButton} onClick={handleClick}>{!postsEnd ? "Load More" : "Try Again"}</button>
             </div>
         </main>
     )

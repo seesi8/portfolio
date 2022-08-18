@@ -11,7 +11,13 @@
     background-color: #00A8B7;
 }
 
-.loadMoreButtonContainer{
+.container{
     display: flex;
     justify-content: center;
+}
+
+.noMorePosts{
+    margin: 0;
+    color: white;
+    font-size: 2vw;
 }

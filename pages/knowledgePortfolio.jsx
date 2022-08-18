@@ -6,14 +6,14 @@ import { firestore } from '../lib/firebase';
 
 export async function getServerSideProps({ }) {
 
-    const ref = query(collection(firestore, "knowledge"), limit(4))
-    const docsSnap = await getDocs(ref);
-    console.log(docsSnap)
+    const knowledgeRef = query(collection(firestore, "knowledge"), limit(4))
+    const knowledgeSnap = await getDocs(knowledgeRef);
+
     let items = []
-    docsSnap.forEach((doc) => {
+    knowledgeSnap.forEach((doc) => {
         items.push(doc.data())
     });
-    console.log(items)
+
     return {
         props: { items: items },
     }

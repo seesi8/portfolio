@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.done{
+    font-size: 3vw;
+    color: white;
+}
+
+.input {
+    color: white;
+}

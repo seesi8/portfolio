@@ -1,4 +1,7 @@
 export default function Loader({ show }) {
+    
+    //used to show a loader
+    
     return (
         <>
             {show ?

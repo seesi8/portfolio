@@ -1,13 +1,15 @@
 import { firestore } from '../lib/firebase';
 import { collection, query, where, getDocs, doc, getDoc } from "firebase/firestore";
-import { useState } from 'react';
 import Project from '../components/project'
 import Head from 'next/head'
-import { useRouter } from 'next/router'
+import Error from 'next/error'
+
+
 export default function Slug({ proj }) {
+    /*becasue display is set to blocking you need to check to see if there is no data and redirec to a 404. The reason that there is fallback blocking is so that the project does not have to be restarted every time a project is started.*/
     if(proj != "404"){
         return (
-            <main>
+            <main className='postContainer'>
                 <Head>
                     <title>{proj.title}</title>
                     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -19,9 +21,7 @@ export default function Slug({ proj }) {
         )
     }else{
         return (
-            <div>
-                <h1>404 : No Page Found</h1>
-            </div>
+            <Error statusCode={404} />
         )
     }
 
@@ -29,13 +29,19 @@ export default function Slug({ proj }) {
 
 export async function getStaticProps({ params }) {
     const { slug } = params;
-    const ref = doc(firestore, "projects", slug)
-    const docSnap = await getDoc(ref);
+    const projectsRef = doc(firestore, "projects", slug)
+    const projectsSnap = await getDoc(projectsRef);
     let data = undefined;
-    if (docSnap.data()) {
-        data = docSnap.data()
+
+    if (projectsSnap.data() != undefined) {
+        data = projectsSnap.data()
+    }else{
+        data = "404"
     }
-    !data && (data = "404")
+
+    //make the date serializable
+    data.datemade = (new Date(data.datemade.toDate())).toLocaleDateString()
+
     return {
         props: { proj: data },
         revalidate: 300,
@@ -43,12 +49,14 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-    const ref = query(collection(firestore, "projects"))
-    const docsSnap = await getDocs(ref);
+    const projectsRef = query(collection(firestore, "projects"))
+    const projectsSnap = await getDocs(projectsRef);
     let paths = []
-    docsSnap.forEach((doc) => {
+
+    projectsSnap.forEach((doc) => {
         paths.push({ params: { slug: doc.data().slug } })
     });
+
     return {
         paths,
         fallback: 'blocking'

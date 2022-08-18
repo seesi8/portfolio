@@ -4,8 +4,10 @@
     display: inline-flex;
     justify-content: center;
     flex-wrap: wrap;
+    overflow-x: hidden;
     height: min-content;
-    width: calc(100vw - 5rem);
+    /*6.2 to account for vertical scroll 5rem for padding + 1.2 for scroll bar*/
+    width: calc(100vw - 6.2rem);
 }
 .cardImageContainer{
     width: 100%;
@@ -33,6 +35,7 @@
     margin-left: 2rem;
     margin-right: 2rem;
 }
+
 .cardViewButton{
     min-width: fit-content;
     float: right;
