@@ -1,10 +1,11 @@
 import { useContext } from "react"
-import { UserContext } from '../lib/context'
+import { UserContext, ThemeContext } from '../lib/context'
 import styles from './Navbar.module.css'
 import Link from "next/link";
 
 export default function Navbar({ }) {
   const { user, username } = useContext(UserContext)
+  const { width } = useContext(ThemeContext)
   return (
     <div className={styles.navbar}>
       <div className={styles.leftColumn}>
@@ -16,7 +17,7 @@ export default function Navbar({ }) {
         <div className={styles.usernameContainer}>
           <h1 className={styles.username}>
             {user ?
-              <>@{username}</>
+              <>{width>475 && `@${username}`}</>
               :
               <Link href="/signin"><a>Sign In</a></Link>
             }

@@ -7,7 +7,7 @@
     overflow-x: hidden;
     height: min-content;
     /*6.2 to account for vertical scroll 5rem for padding + 1.2 for scroll bar*/
-    width: calc(100vw - 6.2rem);
+    width: calc(100vw-5rem);
 }
 .cardImageContainer{
     width: 100%;
