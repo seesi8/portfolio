@@ -36,3 +36,13 @@
 .contactMain{
     overflow-x: hidden;
 }
+
+@media (orientation: portrait) {
+    .contactForm,
+    .contactFormButton{
+        margin-left: 5vw;
+        margin-right: 5vw;
+        width: 90vw;
+    }
+
+}

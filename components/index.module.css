@@ -1,6 +1,7 @@
 .moreButton{
     width: 20vw;
     height: 8vh;
+    min-width: fit-content;
     background-color: #50C878;
     border-color: #50C878;
     border-width: .6rem;

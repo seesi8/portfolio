@@ -1,6 +1,8 @@
 import { firestore } from '../lib/firebase';
 import { collection, query, where, getDocs, doc, getDoc } from "firebase/firestore";
-import Project from '../components/project'
+import dynamic from 'next/dynamic'
+const Project = dynamic(() => 
+import ('../components/project'))
 import Head from 'next/head'
 import Error from 'next/error'
 

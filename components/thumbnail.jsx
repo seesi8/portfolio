@@ -3,6 +3,7 @@ import Loader from '../components/loader'
 import React, { useState } from 'react';
 import { useRouter } from 'next/router'
 import { v4 as uuidv4 } from 'uuid';
+import Link from 'next/link';
 
 export default function thumbnail({ projects }) {
   return (
@@ -16,12 +17,14 @@ function ProjItem(item) {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   item = item.item
+  /*
   const onClick = e => {
     e.preventDefault()
     console.log(setLoading)
     setLoading(true)
     router.push(`/${item.slug}`)
   }
+  */
   return (
     <div className={styles.card}>
       <Loader key={uuidv4()} show={loading} />
@@ -29,7 +32,7 @@ function ProjItem(item) {
         <img className={styles.cardImage} src={item.imgurl} alt="" />
       </div>
       <div className="cardTools">
-        <button onClick={onClick} className={styles.cardViewButton}><h3 className={styles.cardViewButtonReadMore}>Read More</h3></button>
+        <Link href='/[slug]' as={`/${item.slug}`}><button className={styles.cardViewButton}><h3 className={styles.cardViewButtonReadMore}>Read More</h3></button></Link>
         <h2 className={styles.cardTitle}>{item.title}</h2>
       </div>
     </div>
