@@ -1,15 +1,16 @@
-import { setDoc, doc} from "firebase/firestore";
-import { firestore} from '../lib/firebase';
+import { setDoc, doc } from "firebase/firestore";
+import { firestore } from '../lib/firebase';
 import styles from '../components/add.module.css'
 import kebabCase from 'lodash.kebabcase';
 import React, { useState } from "react";
+import Head from 'next/head'
 
 async function UploadJson(e, setDone) {
 
     e.preventDefault();
 
     for (let fileIndex in e.target.files) {
-        if (isNaN(fileIndex)) { 
+        if (isNaN(fileIndex)) {
             continue
         }
         const fileReader = new FileReader();
@@ -44,10 +45,17 @@ export default function Add({ }) {
     const [done, setDone] = useState("Not Done")
 
     return (
-        <main className={styles.container}>
-            <input className={styles.input} type="file" multiple onChange={(e) => UploadJson(e, setDone)} />
-            <h1 className={styles.done}>{done}</h1>
-        </main>
+        <>
+            <Head>
+                <title>Add Projects To SamuelDoesDev</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
+            <main className={styles.container}>
+                <input className={styles.input} type="file" multiple onChange={(e) => UploadJson(e, setDone)} />
+                <h1 className={styles.done}>{done}</h1>
+            </main>
+        </>
+
     )
 
 }

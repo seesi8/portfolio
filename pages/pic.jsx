@@ -3,7 +3,7 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import React, { useState } from "react";
 import styles from '../components/add.module.css'
 
-function UploadJson(e, setStoreageUrl){
+function UploadJson(e, setStoreageUrl) {
 
     e.preventDefault();
 
@@ -11,7 +11,7 @@ function UploadJson(e, setStoreageUrl){
     const storageRef = ref(storage, uuidv4());
 
     const file = Array.from(e.target.files)[0];
-    
+
     // 'file' comes from the Blob or File API
     uploadBytes(storageRef, file).then((snapshot) => {
         getDownloadURL(snapshot.ref)
@@ -25,10 +25,17 @@ export default function Page({ }) {
     const [storageUrl, setStoreageUrl] = useState("")
 
     return (
-        <main className={styles.container}>
-            <input className={styles.input} type="file" onChange={(e) => UploadJson(e, setStoreageUrl)} />
-            <h2 className={styles.done}>{storageUrl}</h2>
-        </main>
+        <>
+            <Head>
+                <title>Convert Picture To URL</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
+            <main className={styles.container}>
+                <input className={styles.input} type="file" onChange={(e) => UploadJson(e, setStoreageUrl)} />
+                <h2 className={styles.done}>{storageUrl}</h2>
+            </main>
+        </>
+
     )
 
 }

@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Knowledge from '../components/knowledge';
 import { collection, query, where, getDocs, orderBy, doc, getDoc, limit } from "firebase/firestore";
 import { firestore } from '../lib/firebase';
+import Head from 'next/head';
 
 export async function getServerSideProps({ }) {
 
@@ -22,8 +23,14 @@ export async function getServerSideProps({ }) {
 
 export default function knowledgePortfolio({ items }) {
     return (
-        <main className={styles.knowlage}>
-            {items ? items.map((item) => <><Knowledge theKnowledge={item} key={uuidv4()} /></>) : null}
-        </main>
+        <>
+            <Head>
+                <title>Samuel Liebert's Knolage Portfoloio</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
+            <main className={styles.knowlage}>
+                {items ? items.map((item) => <><Knowledge theKnowledge={item} key={uuidv4()} /></>) : null}
+            </main>
+        </>
     )
 }
