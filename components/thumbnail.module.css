@@ -1,5 +1,5 @@
 .container{
-    margin: 5rem 2.5rem 0 2.5rem;
+    margin-top: 5rem;
     border-width: 1rem;
     display: inline-flex;
     justify-content: center;
@@ -7,7 +7,7 @@
     overflow-x: hidden;
     height: min-content;
     /*6.2 to account for vertical scroll 5rem for padding + 1.2 for scroll bar*/
-    width: calc(100vw-5rem);
+    width: 100vw;
 }
 .cardImageContainer{
     width: 100%;
