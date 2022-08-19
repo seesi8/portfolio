@@ -35,12 +35,12 @@ export async function getStaticProps({ params }) {
 
     if (projectsSnap.data() != undefined) {
         data = projectsSnap.data()
+        data.datemade = (new Date(data.datemade.toDate())).toLocaleDateString()
     }else{
         data = "404"
     }
 
     //make the date serializable
-    data.datemade = (new Date(data.datemade.toDate())).toLocaleDateString()
 
     return {
         props: { proj: data },
