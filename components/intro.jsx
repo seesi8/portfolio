@@ -19,7 +19,6 @@ export default function Page({ }) {
 
   const { vertical, height, width } = useContext(ThemeContext)
   const aspect_ratio = width / height
-  console.log(useContext(ThemeContext))
   
   return (
     <main className={styles.intro}>

@@ -31,7 +31,6 @@ export async function getServerSideProps({ }) {
 async function getMorePosts(cursor) {
 
     let newPosts = []
-    console.log(cursor)
     const projectsQuery = query(collection(firestore, "projects"), orderBy("datemade", "desc"), startAfter(new Date(cursor)), limit(LIMIT))
     const projectsQuerySnap = await getDocs(projectsQuery);
 
@@ -60,8 +59,6 @@ export default function Posts(projects) {
         setLoading(true);
 
         let cursor = new Date(posts[posts.length - 1].datemade)
-        console.log(cursor)
-        console.log(posts[posts.length - 1].datemade)
         const newPosts = await getMorePosts(cursor)
 
         const postsRef = posts.concat(newPosts);

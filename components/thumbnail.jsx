@@ -20,7 +20,6 @@ function ProjItem(item) {
   /*
   const onClick = e => {
     e.preventDefault()
-    console.log(setLoading)
     setLoading(true)
     router.push(`/${item.slug}`)
   }

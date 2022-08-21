@@ -7,7 +7,7 @@
 .usernameInput {
     background-color: white;
     border: none;
-    width: 10vw;
+    width: 60vw;
     filter: drop-shadow(2px 2px 0px);
     height: 5vh;
     font-size: x-large;
@@ -51,11 +51,11 @@ button.choose[disabled] {
 }
 
 .googleSignOut{
-    min-width: 20rem;
+    min-width: fit-content;
     background-color: #c42727;
-    width: 25vw;
+    width: 70vw;
     height: 25vh;
-    margin: 37.5vh;
+    margin-top: calc(50vh - 7.5rem);
     border: none;
     border-radius: 2rem;
     font-size: xxx-large;
@@ -72,9 +72,9 @@ button.choose[disabled] {
 .googleSignIn{
     background-color: white;
     display: flex;
-    width: 20vw;
     border-radius: .6rem;
-    height: 5vh;
+    width: 8rem;
+    height: 2.2rem;
 }
 
 .googleSignInLogo{
@@ -82,7 +82,7 @@ button.choose[disabled] {
 }
 
 .googleSignInText{
-    font-size: 2vh;
+    font-size: .7rem;
     margin: auto;
     font-family: Cambria;
 }

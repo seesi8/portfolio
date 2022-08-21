@@ -1,13 +1,14 @@
-import { auth, firestore, googleAuthProvider } from '../lib/firebase';
+import { getProviderForProviderId, auth, firestore, googleAuthProvider, githubAuthProvider } from '../lib/firebase';
 import { UserContext } from '../lib/context';
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import { signInWithPopup } from "firebase/auth";
+import { OAuthProvider, linkWithCredential, signInWithPopup } from "firebase/auth";
 import { useEffect, useState, useCallback, useContext } from 'react';
 import debounce from 'lodash.debounce';
 import styles from '../components/signin.module.css'
 import { writeBatch } from "firebase/firestore";
 import { useRouter } from 'next/router'
 import Head from 'next/head'
+
 export default function Enter(props) {
   const { user, username } = useContext(UserContext);
 
@@ -27,16 +28,35 @@ export default function Enter(props) {
 
 // Sign in with Google button
 function SignInButton() {
-  const signInWithGoogle = async () => {
-    await signInWithPopup(auth, googleAuthProvider);
+
+  const signInWithProvider = async (provider) => {
+    //try to sign in with choosen provider
+    await signInWithPopup(auth, provider).catch(error => {
+      //if email already has another acount
+      if (error.code != 'auth/account-exists-with-different-credential') {
+        return
+      }
+      //get the default provider for that email
+      var defaultProvider = getProviderForProviderId(error.customData._tokenResponse.verifiedProvider[0]);
+      //sign in with the default provider
+      signInWithPopup(auth, defaultProvider).then(result => {
+        //link the first provider to email
+        linkWithCredential(auth.currentUser, OAuthProvider.credentialFromError(error))
+      })
+      return
+    })
   };
 
   return (
     <div className={styles.googleSignInContainer}>
       <h1 className={styles.signIn}>Sign In</h1>
-      <button className={styles.googleSignIn} onClick={signInWithGoogle}>
+      <button className={styles.googleSignIn} onClick={(e) => signInWithProvider(googleAuthProvider)}>
         <img src={'/google.png'} className={styles.googleSignInLogo} />
         <h4 className={styles.googleSignInText}>Sign in with Google</h4>
+      </button>
+      <button className={styles.googleSignIn} onClick={(e) => signInWithProvider(githubAuthProvider)}>
+        <img src={'/logos/github.png'} className={styles.googleSignInLogo} />
+        <h4 className={styles.googleSignInText}>Sign in with Github</h4>
       </button>
     </div>
 
@@ -59,10 +79,10 @@ function UsernameForm() {
   const [loading, setLoading] = useState(false);
 
   const { user, username } = useContext(UserContext);
-
+  const router = useRouter()
   const OnSubmit = async (e) => {
     e.preventDefault();
-    const router = useRouter()
+
     // Create refs for both documents
     const userDoc = doc(firestore, 'users', `${user.uid}`);
     const usernameDoc = doc(firestore, 'usernames', `${formValue}`);

@@ -52,3 +52,15 @@
     background: var(--bg-color) fixed;
     height: calc(100vh - 5rem);
 }
+
+@media (orientation: portrait) {
+    .formInput,
+    .formSubmitButton,
+    .formMainBody{
+        margin-left: 5vw;
+        margin-right: 5vw;
+        width: 90vw !important;
+        margin-bottom: 2vh;
+    }
+
+}

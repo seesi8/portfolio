@@ -17,7 +17,7 @@ export default function Navbar({ }) {
         <div className={styles.usernameContainer}>
           <h1 className={styles.username}>
             {user ?
-              <>{width>475 && `@${username}`}</>
+              <>{width>475 && username && `@${username}`}</>
               :
               <Link href="/signin"><a>Sign In</a></Link>
             }
