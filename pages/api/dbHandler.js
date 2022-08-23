@@ -1,6 +1,6 @@
 
 import { setDoc, doc } from "firebase/firestore";
-import { firestore} from '../../lib/firebase';
+import { firestore } from '../../lib/firebase';
 import { v4 as uuidv4 } from 'uuid';
 
 export default async function dbHandler(req, res) {
@@ -11,13 +11,14 @@ export default async function dbHandler(req, res) {
     body: req.body,
     title: title
   }
-  if (password.slice(1) / password.charAt(0) == 940358) {
-    const docRef = await setDoc(doc(firestore, "knowledge", uuidv4()), {
-      ...params
-    });
-    res.status(200).json({ status: true })
-  }
-  else {
+  if (!password || !domain || !title) {
     res.status(200).json({ status: false })
   }
+  if (password.slice(1) / password.charAt(0) != 940358) {
+    res.status(200).json({ status: false })
+  }
+  const docRef = await setDoc(doc(firestore, "knowledge", uuidv4()), {
+    ...params
+  });
+  res.status(200).json({ status: true })
 }
