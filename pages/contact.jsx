@@ -9,6 +9,7 @@ import { UserContext, ThemeContext } from '../lib/context'
 import { firestore } from '../lib/firebase'
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { useContext } from 'react'
+import { EmailAuthProvider } from 'firebase/auth';
 
 
 
@@ -37,8 +38,13 @@ async function sendEmail(e, form, user, router) {
 
     const userRef = doc(firestore, "users", user.uid);
     const userSnap = await getDoc(userRef);
+    let emailTime = userSnap.data().emailTime;
 
-    if (getDifferenceInHours(new Date(userSnap.data().emailTime), new Date()) <= 24) {
+    if(typeof(emailTime) == "string"){
+        emailTime = new Date(emailTime)
+    }
+
+    if (getDifferenceInHours(emailTime, new Date()) >= 24) {
         toast.error('Sorry we have to limit you to one email per day')
         return
     }
@@ -50,7 +56,7 @@ async function sendEmail(e, form, user, router) {
     }
 
     // update time since last message
-    setDoc(userRef, { emailTime: (new Date()).toLocaleDateString() }, { merge: true });
+    setDoc(userRef, { emailTime: new Date()}, { merge: true });
     
     //send email
     emailjs.sendForm('service_xhe5u5g', 'template_r4slb0e', form.current, 'eExXGPoAtphOwzk6q')
