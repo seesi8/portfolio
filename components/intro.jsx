@@ -31,7 +31,7 @@ export default function Page({}) {
                 }}
                 className={styles.introName}
             >
-                Samuel Liebert{" "}
+                Samuel Liebert Developer{" "}
             </h1>
             <Model
                 className={styles.introModel}
