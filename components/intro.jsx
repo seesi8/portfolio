@@ -70,6 +70,7 @@ export default function Page({ projects }) {
                     href=""
                     onClick={(e) => setPage(i)}
                     className={styles.dot}
+                    key={i}
                     //   style={{ transform: `translateX(-${0}px)` }}
                   >
                     {tab}
@@ -77,7 +78,7 @@ export default function Page({ projects }) {
                 );
               }
               return (
-                <p href="" onClick={(e) => setPage(i)}>
+                <p href="" onClick={(e) => setPage(i)} key={i}>
                   {tab}
                 </p>
               );
@@ -190,18 +191,20 @@ export default function Page({ projects }) {
               <div className={styles.middle}>
                 <div className={styles.middleContainer}>
                   {" "}
-                  {info.github ? <Link
-                    className={styles.githubLink}
-                    href={info.github}
-                  >
-                    Github <FaGithub className={styles.icon} />{" "}
-                  </Link> : ""}
-                  {info.livedemo ? <Link
-                    className={styles.demoLink}
-                    href={info.livedemo}
-                  >
-                    Demo <MdWeb className={styles.icon} />{" "}
-                  </Link> : ""}
+                  {info.github ? (
+                    <Link className={styles.githubLink} href={info.github}>
+                      Github <FaGithub className={styles.icon} />{" "}
+                    </Link>
+                  ) : (
+                    ""
+                  )}
+                  {info.livedemo ? (
+                    <Link className={styles.demoLink} href={info.livedemo}>
+                      Demo <MdWeb className={styles.icon} />{" "}
+                    </Link>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </div>
               <div className={styles.rightColumn}>
