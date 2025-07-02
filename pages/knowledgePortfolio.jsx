@@ -1,4 +1,4 @@
-import styles from '../components/knowledge.module.css'
+import styles from '../styles/knowledge.module.css'
 import { v4 as uuidv4 } from 'uuid';
 import Knowledge from '../components/knowledge';
 import { collection, query, where, getDocs, orderBy, doc, getDoc, limit } from "firebase/firestore";

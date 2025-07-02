@@ -35,7 +35,7 @@ const CameraControls = () => {
 
 function Element(props) {
 
-    const { hover, hovered, scale } = props
+    let { hover, hovered, scale } = props
     
     const ref = useRef()
 
@@ -136,9 +136,11 @@ export default function model( scale ) {
                 width: '100%',
                 display: 'flex',
                 justifyContent: 'center',
-                overflow: 'visible'
+                overflow: 'visible',
+                marginRight: "6rem",
+                alignItems: "center"
             }}>
-                <Canvas style={{width: '40vw', height:'40vw', overflow: 'visible'}} gl={{ antialias: true, toneMapping: NoToneMapping }} linear  dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 90 }}>
+                <Canvas style={{width: '100%', height:'70vh', overflow: 'visible'}} gl={{ antialias: true, toneMapping: NoToneMapping }} linear  dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 90 }}>
                     <ambientLight />
                     <Model scale={scale} style={{overflow: 'visible'}}/>
                     <CameraControls />

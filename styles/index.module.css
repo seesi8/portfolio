@@ -1,0 +1,129 @@
+.moreButton {
+  width: 15vw;
+  height: 9vh;
+  min-width: fit-content;
+  border: none;
+  background-color: rgb(105, 125, 98);
+  border: black 0.1rem solid ;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 0rem;
+}
+
+.moreButtonContainer:hover > .moreButton {
+  width: 1rem !important;
+  min-width: 0 !important;
+  transition: all 1.5s ease-in-out;
+}
+
+.moreButtonContainerContainer:has(.moreButtonContainer:hover)
+  .rocketContainer
+  > .rocket {
+  animation: rocket 2s cubic-bezier(0.25, 0, 0.5, 1) 2s;
+}
+
+@keyframes rocket {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+.moreButton:hover {
+  /* background-color: white; */
+  transition: all 0.2s ease-in-out;
+}
+
+.moreButtonContainer {
+  display: flex;
+  width: 15vw;
+  justify-content: start;
+}
+
+.moreButtonContainerContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 9vh;
+  margin: 5rem 0rem;
+}
+.moreButtonTitle {
+  margin: 0;
+  color: black;
+  transition: all 01s ease-in-out;
+  width: 100%;
+  text-wrap: nowrap;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+.moreButtonContainer:hover > .moreButton > .moreButtonTitle {
+  width: 0vw;
+  overflow: hidden;
+  transition: all 01s ease-in-out;
+}
+
+.statement {
+  display: grid;
+  margin: 0;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.dotedHr {
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  border-top: 5px dashed;
+  color: white;
+}
+
+.statementText {
+  color: white;
+  font-size: 1.5rem;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.main {
+  overflow: hidden;
+}
+
+.main {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  height: calc(100vh - 5rem);
+}
+
+.waveContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: -2;
+}
+
+.wave {
+  position: absolute;
+  width: 100%;
+  height: 200px;
+}
+
+.rocket {
+  height: 9vh;
+  width: 15vw;
+  position: absolute;
+}
+
+.rocketContainer {
+  position: relative;
+  z-index: -1;
+}

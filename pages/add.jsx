@@ -1,6 +1,6 @@
 import { setDoc, doc } from "firebase/firestore";
 import { firestore } from '../lib/firebase';
-import styles from '../components/add.module.css'
+import styles from '../styles/add.module.css'
 import kebabCase from 'lodash.kebabcase';
 import React, { useState } from "react";
 import Head from 'next/head'

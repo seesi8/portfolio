@@ -1,5 +1,5 @@
 .contact{
-    color: white;
+    color: black;
     font-size: 3vw;
     overflow-x: hidden;
     display: flex;
@@ -17,9 +17,11 @@
     border-width: .4rem;
     min-height: 3rem;
     font-weight: 600;
-    color: white;
+    color: black;
     padding-left: 1rem;
-    margin-left: calc(40vw / 3);
+    border-style: solid;
+    border-radius: 0.3rem;
+    margin: 1rem;
 }
 
 .contactFormButton{
@@ -28,13 +30,23 @@
 
 .contactFormButton:active{
     background-color: rgba(95, 242, 255, 0.6);
+    border-style: solid;
+
 }
 .contactForms{
     display: inline-block;
 }
 
+.contactForms > form{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .contactMain{
     overflow-x: hidden;
+    height: 70vh;
+    margin-bottom: 7rem;
 }
 
 @media (orientation: portrait) {
@@ -42,7 +54,7 @@
     .contactFormButton{
         margin-left: 5vw;
         margin-right: 5vw;
-        width: 90vw;
+        width: 60vw;
     }
 
 }

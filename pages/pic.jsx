@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import React, { useState } from "react";
-import styles from '../components/add.module.css'
+import styles from '../styles/add.module.css'
 import Head from 'next/head';
 
 function UploadJson(e, setStoreageUrl) {

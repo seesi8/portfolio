@@ -1,22 +1,27 @@
-import styles from '../components/thumbnail.module.css'
-import Loader from '../components/loader'
-import React, { useState } from 'react';
-import { useRouter } from 'next/router'
-import { v4 as uuidv4 } from 'uuid';
-import Link from 'next/link';
+import styles from "../styles/thumbnail.module.css";
+import Loader from "../components/loader";
+import React, { useRef, useState } from "react";
+import { useRouter } from "next/router";
+import { v4 as uuidv4 } from "uuid";
+import Link from "next/link";
+import useScrollPosition from "../reactHooks/useScrollPosition.jsx"
+export default function thumbnail({ projects, _ref, goTo }) {
 
-export default function thumbnail({ projects }) {
   return (
     <div className={styles.container}>
-      {projects ? projects.map((proj) => <><ProjItem item={proj} key={uuidv4()} /></>) : null}
+      {projects
+        ? projects.map((proj, i) => (
+            <>
+              <ProjItem item={proj} key={uuidv4()} _ref={_ref} test="sdfsd" index={i} goTo={goTo}/>
+            </>
+          ))
+        : null}
     </div>
-  )
+  );
 }
 
-function ProjItem(item) {
-  const router = useRouter()
-  const [loading, setLoading] = useState(false)
-  item = item.item
+function ProjItem({item, test, _ref, index, goTo}) {
+
   /*
   const onClick = e => {
     e.preventDefault()
@@ -24,16 +29,14 @@ function ProjItem(item) {
     router.push(`/${item.slug}`)
   }
   */
+
+
+  const scrollPosition = useScrollPosition(_ref);
+
   return (
-    <div className={styles.card}>
-      <Loader key={uuidv4()} show={loading} />
-      <div className={styles.cardImageContainer}>
-        <img className={styles.cardImage} src={item.imgurl} alt="" />
-      </div>
-      <div className="cardTools">
-        <Link href='/[slug]' as={`/${item.slug}`}><button className={styles.cardViewButton}><h3 className={styles.cardViewButtonReadMore}>Read More</h3></button></Link>
-        <h2 className={styles.cardTitle}>{item.title}</h2>
-      </div>
+    <div className={styles.card} data-far={index - Math.round(scrollPosition/147)} onClick={(e) => goTo(item)}>
+      <div className={styles.title}>{item.title}</div>
+      <div className={styles.dateMade}>  {item.datemade} -  {item.languages} →</div>
     </div>
-  )
+  );
 }

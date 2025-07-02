@@ -1,0 +1,62 @@
+.container{
+    text-align: end;
+    font-size: 4rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: end; */
+    row-gap: 2rem;
+    height: fit-content;
+    align-items: end;
+}
+
+.card{
+    width: 65vw;
+    text-wrap: nowrap;
+    overflow-x: hidden;
+    font-weight: 900;
+    transition: all 0.1s ease-in-out;
+    height: fit-content;
+
+    transform-origin: right center; /* or 100% 50% */
+
+}
+
+.dateMade{
+    font-size: 2rem;
+    color: rgb(76, 76, 77);
+}
+
+.card:hover{
+    color: rgb(100, 100, 100);
+    transition: all 0.2s ease-in-out;
+    width: 65vw;
+    padding-right: 1rem;
+    cursor: pointer;
+}
+
+.card[data-far="0"]{
+    scale: 0.3;
+    color: rgb(175, 175, 175);
+}
+.card[data-far="1"]{
+    scale: 0.6;
+    color: rgb(75, 75, 75);
+}
+.card[data-far="2"]{
+    scale: 1;
+}
+.card[data-far="3"]{
+    scale: 1;
+}
+.card[data-far="4"]{
+    scale: 0.6;
+    color: rgb(75, 75, 75);
+}
+.card[data-far="5"]{
+    scale: 0.3;
+    color: rgb(175, 175, 175);
+}
+.card[data-far="6"]{
+    scale: 0.3;
+    color: rgb(175, 175, 175);
+}

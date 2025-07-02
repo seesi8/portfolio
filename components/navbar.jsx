@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { UserContext, ThemeContext } from "../lib/context";
-import styles from "./Navbar.module.css";
+import styles from "../styles/Navbar.module.css";
 import Link from "next/link";
 
 export default function Navbar({}) {
@@ -12,7 +12,7 @@ export default function Navbar({}) {
                 <div className={styles.leftColumn}>
                     <div className={styles.logo}>
                         <Link href="/">
-                            <a>S.D.D</a>
+                            <p>S.D.D</p>
                         </Link>
                     </div>
                     {/* <div className={styles.static}>
@@ -21,7 +21,7 @@ export default function Navbar({}) {
                         </Link>
                     </div> */}
                 </div>
-                <div className={styles.rightColumn}>
+                {/* <div className={styles.rightColumn}>
                     <div className={styles.usernameContainer}>
                         <h1 className={styles.username}>
                             {user ? (
@@ -41,7 +41,7 @@ export default function Navbar({}) {
                             />
                         </Link>
                     )}
-                </div>
+                </div> */}
             </div>
         </div>
     );

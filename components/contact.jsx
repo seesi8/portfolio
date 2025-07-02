@@ -1,4 +1,4 @@
-import styles from './contact.module.css'
+import styles from '../styles/contact.module.css'
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router'
 import { UserContext } from '../lib/context';
@@ -31,7 +31,7 @@ export default function Page({ }) {
             <div className={styles.contact}>
                 <h1>Contact Me</h1>
             </div>
-            <div className="contactForms">
+            <div className={styles.contactForms}>
                 <form onSubmit={handleClick}>
                     <input name="name" required={true} placeholder='Name' type="text" className={styles.contactForm} />
                     <input name="subject" required={true} placeholder="Subject" type="text" className={styles.contactForm} />

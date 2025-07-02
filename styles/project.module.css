@@ -1,0 +1,106 @@
+.title {
+  color: white;
+  width: 35vw;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.795);
+  margin: 0;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+.container {
+  display: flex;
+  position: relative;
+  width: 35vw;
+  justify-content: center;
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+.dotedHr {
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  border-top: 5px dashed;
+  color: white;
+}
+.mainimg {
+  width: 35vw;
+}
+.tldr {
+  font-size: 2rem;
+  color: black;
+  width: 50vw;
+  line-height: 4rem;
+  text-align: justify;
+  font-weight: 100;
+}
+
+.main {
+  background: var(--bg-color) fixed;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding-top: 4rem;
+}
+
+.infoContainer {
+}
+.dateMade,
+.liveDemo,
+.github {
+  width: fit-content;
+  margin: 1rem 0rem 1rem 0rem;
+  color: Black;
+  font-size: 1.5rem;
+}
+.dateMade:hover {
+  cursor: text;
+}
+
+.liveDemoButton:hover, .githubButton:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+}
+
+.dateMadeButton,
+.liveDemoButton,
+.githubButton {
+  min-width: fit-content;
+  display: flex;
+  justify-content: center;
+  margin-right: 3rem;
+  border-width: 0.3rem;
+  /* width: calc(33vw - 5rem); */
+  border-radius: 1rem;
+  height: 71.09px;
+  display: inline;
+  border-color: #50c878;
+  background-color: transparent;
+}
+
+.dateMadeButton:active,
+.dateMadeButton {
+  border: initial;
+  border-width: 0.3rem;
+}
+
+.toolButtons {
+  /* width: calc(100vw - 2rem); */
+}
+
+.description {
+  text-align: justify;
+  color: grey;
+  font-size: 1.2rem;
+}
+
+
+.description {
+  width: 50vw;
+}

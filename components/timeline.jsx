@@ -1,4 +1,4 @@
-import styles from "./timeline.module.css";
+import styles from "../styles/timeline.module.css";
 
 export default function timeline({}) {
     return (

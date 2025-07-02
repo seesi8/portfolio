@@ -4,7 +4,7 @@ import { doc, getDoc, setDoc } from "firebase/firestore";
 import { OAuthProvider, linkWithCredential, signInWithPopup } from "firebase/auth";
 import { useEffect, useState, useCallback, useContext } from 'react';
 import debounce from 'lodash.debounce';
-import styles from '../components/signin.module.css'
+import styles from '../styles/signin.module.css'
 import { writeBatch } from "firebase/firestore";
 import { useRouter } from 'next/router'
 import Head from 'next/head'

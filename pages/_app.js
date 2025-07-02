@@ -7,8 +7,12 @@ import NavBar from '../components/navbar'
 import { Toaster } from 'react-hot-toast';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { Roboto } from '@next/font/google'
 
-
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['100', '400', '300', '500', '700', '900']
+})
 
 function MyApp({ Component, pageProps }) {
 
@@ -28,7 +32,7 @@ function MyApp({ Component, pageProps }) {
       <ThemeContext.Provider value={theme}>
         <Toaster />
         <NavBar />
-        <div className='componentContainer'>
+        <div className={roboto.className}>
           <Component {...pageProps} />
         </div>
       </ThemeContext.Provider>

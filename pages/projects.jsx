@@ -4,7 +4,7 @@ import { firestore } from '../lib/firebase';
 import Loader from '../components/loader'
 import {fixDate} from '../lib/hooks'
 import { useState } from "react";
-import styles from '../components/posts.module.css'
+import styles from '../styles//posts.module.css'
 import Head from 'next/head'
 
 const LIMIT = 4;

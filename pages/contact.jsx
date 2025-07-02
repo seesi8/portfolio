@@ -1,4 +1,4 @@
-import styles from '../components/contactPage.module.css'
+import styles from '../styles/contactPage.module.css'
 import { useRouter } from 'next/router'
 import { rgba, darken } from 'polished';
 import React, { useState, useEffect, useRef } from 'react'
@@ -31,23 +31,23 @@ function longShadow(color, total = 4000, dark = 0.00125) {
 async function sendEmail(e, form, user, router) {
     e.preventDefault();
 
-    if (!user) {
-        toast.error('Account required for message')
-        return
-    }
+    // if (!user) {
+    //     toast.error('Account required for message')
+    //     return
+    // }
 
-    const userRef = doc(firestore, "users", user.uid);
-    const userSnap = await getDoc(userRef);
-    let emailTime = userSnap.data().emailTime;
+    // const userRef = doc(firestore, "users", user.uid);
+    // const userSnap = await getDoc(userRef);
+    // let emailTime = userSnap.data().emailTime;
 
-    if(typeof(emailTime) == "string"){
-        emailTime = new Date(emailTime)
-    }
+    // if(typeof(emailTime) == "string"){
+    //     emailTime = new Date(emailTime)
+    // }
 
-    if (getDifferenceInHours(emailTime, new Date()) >= 24) {
-        toast.error('Sorry we have to limit you to one email per day')
-        return
-    }
+    // if (getDifferenceInHours(emailTime, new Date()) >= 24) {
+    //     toast.error('Sorry we have to limit you to one email per day')
+    //     return
+    // }
 
     let regexEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!form.current.email.value.match(regexEmail)) {
@@ -56,7 +56,7 @@ async function sendEmail(e, form, user, router) {
     }
 
     // update time since last message
-    setDoc(userRef, { emailTime: new Date()}, { merge: true });
+    // setDoc(userRef, { emailTime: new Date()}, { merge: true });
     
     //send email
     emailjs.sendForm('service_xhe5u5g', 'template_r4slb0e', form.current, 'eExXGPoAtphOwzk6q')
