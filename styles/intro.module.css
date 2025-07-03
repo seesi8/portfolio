@@ -1,3 +1,5 @@
+@value main-height: calc(100vh - 48px - 32px - 7vw - 96px - 36px);
+
 /* .introName{
     color: rgb(1, 37, 33);
     margin-left: 6rem;
@@ -34,7 +36,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 72vh;
+  height: main-height;
 }
 .tabsContainer {
   display: flex;
@@ -51,7 +53,7 @@
 
 .thumbnails {
   width: 100%;
-  height: 77vh;
+  height: main-height;
   display: flex;
   overflow-y: scroll;
   scroll-behavior: smooth;
@@ -95,17 +97,17 @@
 }
 
 .second {
-  transform: translateY(-77em);
+  transform: translateY(calc(-1 * (main-height + 20rem)));
 }
 
 .third {
-  transform: translateY(-140rem);
+  transform: translateY(calc(-1 * (2 * main-height + 20rem + 2rem)));
 }
 .fourth {
-  transform: translateY(-204rem);
+  transform: translateY(calc(-1 * (3 * main-height + 20rem + 2rem + 7rem)));
 }
 .final {
-  transform: translateY(-264rem);
+  transform: translateY(calc(-1 * (4 * main-height + 20rem + 2rem + 7rem - 5rem + 7rem)));
 }
 
 .dot {
@@ -145,12 +147,13 @@
 .about {
   /* background-color: pink; */
   background-image: url("/paper.jpg");
-  height: 64vh;
+  height: calc(main-height - 5rem);
   width: 96%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   border-radius: 1rem;
   border: solid black 0.2rem;
+  overflow-y: auto;
 }
 
 .headshot {
@@ -210,13 +213,14 @@
 
 .introModelContainer {
   margin-bottom: 20rem;
+  height: main-height;
 }
 
 @media only screen and (max-width: 1340px) {
   .about {
     /* background-color: pink; */
     background-image: url("/paper.jpg");
-    height: 66vh;
+    height: calc(main-height - 5rem);
     width: 96%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -224,7 +228,7 @@
     border: solid black 0.2rem;
     overflow-y: scroll;
   }
-  .headshot{
+  .headshot {
     margin: 1rem;
   }
 }

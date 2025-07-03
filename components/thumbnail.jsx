@@ -34,7 +34,7 @@ function ProjItem({item, test, _ref, index, goTo}) {
   const scrollPosition = useScrollPosition(_ref);
 
   return (
-    <div className={styles.card} data-far={index - Math.round(scrollPosition/147)} onClick={(e) => goTo(item)}>
+    <div className={styles.card} data-far={index - Math.round(scrollPosition/151)} onClick={(e) => goTo(item)}>
       <div className={styles.title}>{item.title}</div>
       <div className={styles.dateMade}>  {item.datemade} -  {item.languages} →</div>
     </div>
