@@ -43,7 +43,8 @@
   text-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-left: 6rem;
+  margin-left: 4rem;
+  margin-right: 2rem;
 }
 
 .tabs {
@@ -128,6 +129,7 @@
 }
 
 .tldr {
+    font-weight: 300;
 }
 
 .imageContainer {
@@ -135,6 +137,9 @@
   width: 30vw;
   height: 30vw;
   position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: #00484c 0.5rem solid;
 }
 
 .imageContainerContainer {
