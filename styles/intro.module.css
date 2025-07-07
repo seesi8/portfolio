@@ -63,7 +63,7 @@
   justify-content: end;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  padding-right: 5rem;
+  padding-right: 1rem;
   /* margin-bottom: 2rem; */
   position: relative;
 }

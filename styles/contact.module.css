@@ -54,9 +54,9 @@
 @media (orientation: portrait) {
     .contactForm,
     .contactFormButton{
-        margin-left: 5vw;
-        margin-right: 5vw;
-        width: calc(100vw - 64px - 32px - 152px - 5rem);
+        margin-left: 4%;
+        margin-right: 4%;
+        min-width: 92%;
     }
 
 }
