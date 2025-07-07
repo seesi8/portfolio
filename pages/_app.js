@@ -29,6 +29,7 @@ function MyApp({ Component, pageProps }) {
   return (
 
     <UserContext.Provider value={userData}>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <ThemeContext.Provider value={theme}>
         <Toaster />
         <NavBar />
