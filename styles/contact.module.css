@@ -48,7 +48,7 @@
 .contactMain{
     overflow-x: hidden;
     height: main-height;
-    margin-bottom: 7rem;
+    margin-bottom: 9rem;
 }
 
 @media (orientation: portrait) {

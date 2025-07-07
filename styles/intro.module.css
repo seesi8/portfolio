@@ -1,4 +1,4 @@
-@value main-height: calc(100vh - 48px - 32px - 7vw - 96px - 36px);
+@value main-height: calc(100vh - 48px - 32px - 7vw - 16px);
 
 /* .introName{
     color: rgb(1, 37, 33);
@@ -21,7 +21,7 @@
   text-align: center;
   margin: 0rem;
   margin-top: 2rem;
-  margin-bottom: 6rem;
+  margin-bottom: 1rem;
   line-height: 7vw;
 }
 .intro {
@@ -32,6 +32,7 @@
   display: block;
   overflow: visible;
   grid-template-columns: 30% 70%;
+  height: 100%;
 }
 .block {
   display: flex;
@@ -88,7 +89,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: calc(main-height + 3vh);
+  height: 100%;
   overflow-y: hidden;
   overflow-x: hidden;
   flex-direction: column;
@@ -104,13 +105,13 @@
 }
 
 .third {
-  transform: translateY(calc(-1 * (2 * main-height + 20rem + 3rem)));
+  transform: translateY(calc(-1 * (2 * main-height + 20rem + 4vh)));
 }
 .fourth {
-  transform: translateY(calc(-1 * (3 * main-height + 20rem + 2rem + 7rem)));
+  transform: translateY(calc(-1 * (3 * main-height + 20rem + 2.5rem)));
 }
 .final {
-  transform: translateY(calc(-1 * (4 * main-height + 20rem + 2rem + 7rem - 5rem + 7rem)));
+  transform: translateY(calc(-1 * (4 * main-height + 20rem + 2rem + 7rem - 5rem)));
 }
 
 .dot {
@@ -124,7 +125,9 @@
 }
 
 .project {
-  height: 60vh;
+  height: calc(main-height - 5.5rem);
+  overflow: auto;
+  margin: 2%;
   margin-top: 7rem;
   display: grid;
   grid-template-columns: 40% 10% 50%;
@@ -132,6 +135,12 @@
 
 .tldr {
     font-weight: 300;
+    max-height: calc(main-height - 5.5rem - 10rem);
+    overflow: auto;
+}
+
+.projectTitle{
+  line-height: 2rem;
 }
 
 .imageContainer {
@@ -156,6 +165,7 @@
   background-image: url("/paper.jpg");
   height: calc(main-height - 5rem);
   width: 96%;
+  margin: 2%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   border-radius: 1rem;
@@ -254,4 +264,42 @@
 
 .thumbnailsContainer{
     position: relative;
+}
+
+@media (orientation: portrait) {
+  .tabsContainer {
+    margin: 0;
+  }
+
+
+  .block{
+    flex-direction: column;
+  }
+
+  .tabs{
+    width: 100%;
+    display: flex;
+    height: 4rem;
+    text-align: center;
+    z-index: 5;
+  }
+
+  .tabs > p{
+    font-size: 1.3rem;
+  }
+
+  .dot {
+    transition: all 0.7s ease-in-out;
+    transform: rotate(-90deg) translateX(-1.2rem);
+  }
+
+  .dot{
+    font-size: 0rem !important;
+  }
+  
+  .dot::after {
+    margin-left: 2rem;
+    font-size: 1.3rem;
+    content: "•";
+  }
 }

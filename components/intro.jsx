@@ -55,7 +55,10 @@ export default function Page({ projects }) {
     if(width < 885){
       setScale(width/985)
     }
-    else{
+    if(vertical){
+      setScale(1)
+    }
+    if(!vertical && width > 885){
       setScale(1)
     }
   },  [vertical, width, height])
@@ -64,7 +67,7 @@ export default function Page({ projects }) {
     <main className={styles.intro}>
       <h1
         style={{
-          textShadow: `${longShadow("#50C878", 200, 0.002)}`,
+          textShadow: `${longShadow("#50C878", 30, 0.006)}`,
         }}
         className={styles.introName}
       >
@@ -196,7 +199,7 @@ export default function Page({ projects }) {
             <div className={styles.project}>
               <div className={styles.leftColumn}>
                 <div className={styles.top}>
-                  <h1>{info.title}</h1>
+                  <h1 className={styles.projectTitle}>{info.title}</h1>
 
                   <p className={styles.tldr}>{info.tldr}</p>
                 </div>
