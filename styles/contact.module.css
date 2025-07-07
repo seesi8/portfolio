@@ -1,4 +1,4 @@
-@value main-height: calc(100vh - 48px - 32px - 7vw - 96px - 36px);
+@value main-height: calc(100lvh - 48px - 32px - 7vw - 96px - 36px);
 
 .contact{
     color: black;

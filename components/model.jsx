@@ -140,7 +140,7 @@ export default function model( scale ) {
                 marginRight: "6rem",
                 alignItems: "center"
             }}>
-                <Canvas style={{width: '100%', height:'70vh', overflow: 'visible'}} gl={{ antialias: true, toneMapping: NoToneMapping }} linear  dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 90 }}>
+                <Canvas style={{width: '100%', height:'70lvh', overflow: 'visible'}} gl={{ antialias: true, toneMapping: NoToneMapping }} linear  dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 90 }}>
                     <ambientLight />
                     <Model scale={scale} style={{overflow: 'visible'}}/>
                     <CameraControls />

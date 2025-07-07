@@ -1,4 +1,4 @@
-@value main-height: calc(100vh - 48px - 32px - 7vw - 16px);
+@value main-height: calc(100lvh - 48px - 32px - 7vw - 16px);
 
 /* .introName{
     color: rgb(1, 37, 33);
@@ -56,7 +56,7 @@
 
 .thumbnails {
   width: 100%;
-  height: calc(main-height + 3vh);
+  height: calc(main-height + 3lvh);
   display: flex;
   overflow-y: scroll;
   scroll-behavior: smooth;
@@ -105,7 +105,7 @@
 }
 
 .third {
-  transform: translateY(calc(-1 * (2 * main-height + 20rem + 4vh)));
+  transform: translateY(calc(-1 * (2 * main-height + 20rem + 4lvh)));
 }
 .fourth {
   transform: translateY(calc(-1 * (3 * main-height + 20rem + 2.5rem)));
