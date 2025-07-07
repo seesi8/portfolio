@@ -1,12 +1,14 @@
 .container{
     text-align: end;
-    font-size: 4rem;
+    font-size: 2.6vw;
     display: flex;
     flex-direction: column;
     /* justify-content: end; */
     row-gap: 2rem;
     height: fit-content;
+    min-height: 100%;
     align-items: end;
+    padding-bottom: 1rem;
 }
 
 .card{
@@ -22,7 +24,7 @@
 }
 
 .dateMade{
-    font-size: 2rem;
+    font-size: 2vw;
     color: rgb(76, 76, 77);
 }
 

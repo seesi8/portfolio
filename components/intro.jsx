@@ -32,6 +32,7 @@ export default function Page({ projects }) {
   const aspect_ratio = width / height;
   const [page, setPage] = useState(0);
   const tabs = ["Home", "Projects", "Contact", "About Me"];
+  const [scale, setScale] = useState(1);
 
   const home = useRef(null);
   const thumbnails = useRef(null);
@@ -49,6 +50,15 @@ export default function Page({ projects }) {
     setPage(4);
     setInfo(item);
   };
+
+  useEffect(() => {
+    if(width < 885){
+      setScale(width/985)
+    }
+    else{
+      setScale(1)
+    }
+  },  [vertical, width, height])
 
   return (
     <main className={styles.intro}>
@@ -89,10 +99,14 @@ export default function Page({ projects }) {
         <div className={styles.allPages}>
           <div className={`${styles.allPagesInner} ${pages[page]}`}>
             <div ref={home} className={styles.introModelContainer}>
-              <Model className={styles.introModel} scale={!vertical ? 1 : 1} />
+              <Model className={styles.introModel} scale={scale} />
             </div>
-            <div className={styles.thumbnails} ref={thumbnails}>
-              <Thumbnail projects={projects} _ref={thumbnails} goTo={goTo} />
+            <div className={styles.thumbnailsContainer}>
+              <div className={styles.topBlock}></div>
+              <div className={styles.thumbnails} ref={thumbnails}>
+                <Thumbnail projects={[...projects, ...projects]} _ref={thumbnails} goTo={goTo} />
+              </div>
+              <div className={styles.bottomBlock}></div>
             </div>
             <Contact ref={contact} />
             <div className={styles.about}>

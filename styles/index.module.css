@@ -89,9 +89,6 @@
   font-family: "Courier New", Courier, monospace;
 }
 
-.main {
-  overflow: hidden;
-}
 
 .main {
   margin: 0;
@@ -99,7 +96,7 @@
   overflow: hidden;
   position: relative;
   z-index: 0;
-  height: calc(100vh - 5rem);
+  height: calc(100vh - 48px);
 }
 
 .waveContainer {
