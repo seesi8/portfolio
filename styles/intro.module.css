@@ -66,6 +66,7 @@
   padding-right: 1rem;
   /* margin-bottom: 2rem; */
   position: relative;
+  padding-bottom: 6rem;
 }
 
 .thumbnails::-webkit-scrollbar {
