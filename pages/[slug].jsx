@@ -42,7 +42,7 @@ export async function getStaticProps({ params }) {
 
   if (projectsSnap.data() != undefined) {
     data = projectsSnap.data();
-    data.datemade = new Date(data.datemade.toDate()).toLocaleDateString();
+    data.datemade = new Date(data.datemade).toLocaleDateString();
   } else {
     data = "404";
   }
