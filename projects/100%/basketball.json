@@ -1,0 +1,9 @@
+{
+  "title": "Fantasy Basketball Web App",
+  "livedemo": "dynasty-basketball.com",
+  "github": "https://github.com/seesi8/basketball",
+  "imgurl": "https://firebasestorage.googleapis.com/v0/b/portfolio-dedd9.appspot.com/o/50a9e437-1dbe-4ece-85ee-76430a5715e0?alt=media&token=ccd05dbd-deeb-427a-8a0b-be561d7dc5d3",
+  "datemade": "Dec.2024",
+  "languages": "Javascript, React, Next JS",
+  "tldr": "As someone who is a large NBA fan, and who plays fantasy basketball, creating a tool to help me better manage my team seemed like a rational idea. This app is based atop the sleeper api, along with my Hashtag Basketball’s player values. This project posed a challenge in terms of performance, as I found that in my first draft of the app loading times were extreme. However through a process primarily consisting of refactoring code in order to limit network requests, I was able to optimize the app. It uses React & Next JS as frameworks."
+}

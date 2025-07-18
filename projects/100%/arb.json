@@ -1,0 +1,9 @@
+{
+  "title": "Arbitrage tool for Hypixel Skyblock",
+  "livedemo": "https://binbin.samueldoes.dev/",
+  "github": "https://github.com/seesi8/bin-bin",
+  "imgurl": "https://firebasestorage.googleapis.com/v0/b/portfolio-dedd9.appspot.com/o/cd1b0815-9b1c-47fe-837e-173f2b35f058?alt=media&token=a35b682e-387d-4860-a88d-aba94d9dbe32",
+  "datemade": "Circa.2022",
+  "languages": "SQL, Javascript, Express, ported to, React, Next JS",
+  "tldr": "Hypixel Skyblock is a game which takes part in the Minecraft video game. This tool started as a part of a larger web app, which provided tools in order to help a user better manage their finances in game. The parent website no longer works, due to API updates, and my refusal to pay for a mySQL database. However, I was able to migrate this tool into a React App. This tool highlights my development in data management, and problem solving. This was one of the first web apps I never made. The app originally used barebones express, but is now migrated to react & Next JS."
+}

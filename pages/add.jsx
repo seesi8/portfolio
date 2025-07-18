@@ -20,10 +20,9 @@ async function UploadJson(e, setDone) {
             const text = e.target.result;
             const fileJSON = JSON.parse(text)
 
-            if (fileJSON.title && fileJSON.tldr && fileJSON.imgurl && fileJSON.description && fileJSON.github && fileJSON.livedemo && fileJSON.datemade) {
+            if (fileJSON.title && fileJSON.tldr && fileJSON.imgurl && fileJSON.languages && fileJSON.github && fileJSON.livedemo && fileJSON.datemade) {
                 let Project = { ...fileJSON }
                 Project.slug = encodeURI(kebabCase(fileJSON.title))
-                Project.datemade = new Date(Project.datemade)
                 const projectRef = setDoc(doc(firestore, "projects", Project.slug), {
                     ...Project
                 });
