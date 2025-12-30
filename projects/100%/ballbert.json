@@ -1,0 +1,9 @@
+{
+  "title": "Ballbert Voice Assistant",
+  "livedemo": "https://demo.ballbert.com/",
+  "github": "https://github.com/Ballbert-LLC/ballbert",
+  "imgurl": "https://firebasestorage.googleapis.com/v0/b/portfolio-dedd9.appspot.com/o/c4ac74f8-397a-4878-9d64-2799a374a7d6?alt=media&token=ff05ccbd-7fb3-478d-81c1-7751de59baf4",
+  "datemade": "2023-Ongoing",
+  "languages": "Python, Swift, JavaScript, Shell",
+  "tldr": "Ballbert is a full-stack voice assistant platform with client-server architecture deployed on Google Cloud. The system features real-time WebSocket communication, OpenAI-powered conversational AI, Google Cloud Speech services, and a modular skills system with recursive dependency resolution. Users can install custom skills that expose actions and parameters. The assistant supports multi-platform deployment including iOS (Swift), desktop, and Raspberry Pi, with wake word detection using Porcupine. Audio is processed through compression and streaming for low-latency responses, with sentiment analysis for dynamic voice modulation. The project demonstrates professional software engineering practices including Docker containerization, MongoDB database management, secure API key handling, and production deployment infrastructure. This represents my most advanced showcase project, highlighting expertise in distributed systems, real-time communication protocols, cloud architecture, and AI integration."
+}

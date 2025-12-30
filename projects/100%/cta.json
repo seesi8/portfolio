@@ -5,5 +5,6 @@
     "imgurl": "https://firebasestorage.googleapis.com/v0/b/portfolio-dedd9.appspot.com/o/36c44ebd-fa28-4e0e-9f2b-a6d80de7d8c1?alt=media&token=626f8f7c-b67b-4542-856e-0856f496620a",
     "datemade": "Dec.2022",
     "languages": "Javascript, React, Next JS, Firebase",
-    "tldr": "This app was created as a birthday present to my mother. As a family who lives in Chicago, me and my family use public transit frequently. This project focused on using data from the CTA api to predict arrival times for Chicago busses & trains. In addition, the process of selecting trains and busses for tracking required unique ways of data management. This project was used frequently by both me and my family. It used Next JS and React as a framework."
+    "tldr": "This app was created as a birthday present to my mother. As a family who lives in Chicago, me and my family use public transit frequently. This project focused on using data from the CTA api to predict arrival times for Chicago busses & trains. In addition, the process of selecting trains and busses for tracking required unique ways of data management. This project was used frequently by both me and my family. It used Next JS and React as a framework.",
+  "importance": 7
   }

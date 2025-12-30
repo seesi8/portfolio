@@ -13,6 +13,18 @@
     grid-template-columns: 30% 70%;
 } */
 
+.githubLinkText{
+  color: blue;
+  font-weight: bold;
+}
+
+.projectsTextContainer{
+  position: fixed;
+  width: 20vw;
+  left: 0;
+  padding-left: 1rem;
+}
+
 .introName {
   color: #002721;
   margin-left: 0rem !important;

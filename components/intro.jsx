@@ -107,6 +107,7 @@ export default function Page({ projects }) {
             <div className={styles.thumbnailsContainer}>
               <div className={styles.topBlock}></div>
               <div className={styles.thumbnails} ref={thumbnails}>
+                <p className={styles.projectsTextContainer}>This includes only a subset of projects that I belive show my growth throughout time. A full list of projects can be found on my <a className={styles.githubLinkText} href="https://github.com/seesi8?tab=repositories">Github</a></p>
                 <Thumbnail projects={[...projects, ...projects]} _ref={thumbnails} goTo={goTo} />
               </div>
               <div className={styles.bottomBlock}></div>
@@ -117,7 +118,7 @@ export default function Page({ projects }) {
                 <h1>Hello,</h1>
                 <h2>
                   Age:{" "}
-                  {Math.round(
+                  {Math.floor(
                     (new Date() - new Date("06/14/2008")) /
                       (1000 * 60 * 60 * 24 * 365.25)
                   )}

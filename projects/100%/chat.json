@@ -5,5 +5,6 @@
   "imgurl": "https://firebasestorage.googleapis.com/v0/b/portfolio-dedd9.appspot.com/o/3362661d-60c1-4404-98e2-6d382c5913b0?alt=media&token=f4753d65-8e3b-4959-b0f0-5fb82425372",
   "datemade": "Aug.2022",
   "languages": "Javascript, React, Next JS, Firebase",
-  "tldr": "This is a simple chat app built from the ground up using React, Next JS, and Firebase. This project demonstrated by developments through data structures, as both managing users along with several threads required more complex data structures than I had previously used. This project had multiple sub-projects, as it also included a flutter app that is a listed separately."
+  "tldr": "This is a simple chat app built from the ground up using React, Next JS, and Firebase. This project demonstrated by developments through data structures, as both managing users along with several threads required more complex data structures than I had previously used. This project had multiple sub-projects, as it also included a flutter app that is a listed separately.",
+  "importance": 8
 }

@@ -25,7 +25,7 @@ export async function getServerSideProps({}) {
   let projects = [];
   const projectsRef = query(
     collection(firestore, "projects"),
-    orderBy("datemade", "desc"),
+    orderBy("importance", "desc"),
     // limit(4)
   );
   const projectsSnap = await getDocs(projectsRef);

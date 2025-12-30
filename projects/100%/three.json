@@ -1,10 +1,10 @@
 {
-    "datemade" : "7/4/22",
-    "description" : "I was browsing across youtube when I came across a video by firebase. It was about how to make cool 3d backgrounds. I found that interesting and followed along with the code. In the tutorial it taught me the basics of how to set up a three js scene and what it took to make it. I learned the basics and that combined with the experience I have had with blender I was able to figure out how it works. I learned about how to create scenes and work with lighting and cameras. This project did not end up going anywhere and did not get used much, but I was able to take this skill and use it later in my portfolio. I used react three fiber in my blog which was different from normal three.js. This project also let me figure out later the differences between these two different versions of the same module. It was a fun project in which I learned about how 3d rendering works in javascript.",
-    "github" : "https://github.com/seesi8/three",
-    "imgurl" : "https://firebasestorage.googleapis.com/v0/b/portfolio-dedd9.appspot.com/o/fbe70527-0914-4b8c-8ba8-16134da0d06d?alt=media&token=626e873a-cc90-4376-905d-0e1e4686841e",
-    "title" : "3d Background Made Using Three.Js, And Pure JS",
-    "tldr" : "This project was made using Three.js It was a fun project and it took just under a day. It was just a fun throwaway project that I was just using to learn the technology. It worked and I learned alot about three.js and the technology that makes it available in the browser. It was a fun experience and I will use this for future projects. The livedemo is below and source code is on the github.",
-    "livedemo" : "https://three.samueldoes.dev"
- }
- 
+  "title": "3D Background",
+  "livedemo": "https://three.samueldoes.dev",
+  "github": "https://github.com/seesi8/three",
+  "imgurl": "https://firebasestorage.googleapis.com/v0/b/portfolio-dedd9.appspot.com/o/fbe70527-0914-4b8c-8ba8-16134da0d06d?alt=media&token=626e873a-cc90-4376-905d-0e1e4686841e",
+  "datemade": "July 2022",
+  "languages": "JavaScript, Three.js",
+  "tldr": "I was browsing across YouTube when I came across a video by Firebase about how to make cool 3D backgrounds. In the tutorial it taught me the basics of how to set up a Three.js scene and what it took to make it. I learned about how to create scenes and work with lighting and cameras. I was able to take this skill and use it later in my portfolio. This project also let me figure out later the differences between Three.js and React-Three-Fiber. It was a fun project in which I learned about how 3D rendering works in JavaScript.",
+  "importance": 0
+}
