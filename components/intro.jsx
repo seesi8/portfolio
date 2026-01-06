@@ -228,7 +228,7 @@ export default function Page({ projects }) {
               <div className={styles.rightColumn}>
                 <div className={styles.imageContainerContainer}>
                   <div className={styles.imageContainer}>
-                    <Image src={info.imgurl} fill={true} />
+                    <Image src={info.imgurl} fill={true} objectFit="contain"/>
                   </div>
                 </div>
               </div>
