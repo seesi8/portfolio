@@ -32,7 +32,7 @@ export default function Page({ projects }) {
   const aspect_ratio = width / height;
   const [page, setPage] = useState(0);
   const tabs = ["Home", "Projects", "Contact", "About Me"];
-  const [scale, setScale] = useState(1);
+  const [scale, setScale] = useState(0.75);
 
   const home = useRef(null);
   const thumbnails = useRef(null);
@@ -53,13 +53,13 @@ export default function Page({ projects }) {
 
   useEffect(() => {
     if(width < 885){
-      setScale(width/985)
+      setScale((width/985)*0.75)
     }
-    if(vertical){
-      setScale(1)
+    else if(vertical){
+      setScale(0.75)
     }
     if(!vertical && width > 885){
-      setScale(1)
+      setScale(0.75)
     }
   },  [vertical, width, height])
 

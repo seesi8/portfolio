@@ -36,7 +36,7 @@ const CameraControls = () => {
 function Element(props) {
 
     let { hover, hovered, scale } = props
-    
+
     const ref = useRef()
 
     //init camera to be used in frame to have images look at camera
@@ -44,7 +44,7 @@ function Element(props) {
 
     //init ran to make sure that the object does not continue to grow while it is hovered
     let ran = false
-    
+
     useFrame(({ camera }) => {
 
         //check if something is hovered and see if they are the hoved object
@@ -84,10 +84,61 @@ function Element(props) {
 
 function Cloud({ count, radius, hover, hovered }) {
     // Cloud Function Forked from https://codesandbox.io/s/spherical-word-cloud-forked-jt3cou?file=/src/App.js:475-520    
-    
+
     //image list generated from pytho script based on folder
-    const images = ['logos/apple.png', 'logos/ardiuno.png', 'logos/blender.png', 'logos/c.png', 'logos/css.png', 'logos/firebase.png', 'logos/funsion360.png', 'logos/git.png', 'logos/github.png', 'logos/google.png', 'logos/homeAssistant.png', 'logos/html.png', 'logos/JavaScript-logo.png', 'logos/jquery.png', 'logos/JSON.png', 'logos/jupyter.png', 'logos/linux.png', 'logos/mongodb.png', 'logos/mpcnc.png', 'logos/mysql.png', 'logos/node.png', 'logos/Notepad++.png', 'logos/npm.png', 'logos/octoprint.png', 'logos/prusa.webp', 'logos/python.png', 'logos/raspberryPi.png', 'logos/React.png', 'logos/reprap.webp', 'logos/three.png', 'logos/unity.png', 'logos/vercel.svg', 'logos/vsCode.png', 'logos/windows.png', 'logos/YAML.png', 'logos/chrome.png']
-    
+    const images = [
+        'logos/ubiquiti.svg',
+        'logos/matplotlib-icon.svg',
+        'logos/webrtc.svg',
+        'logos/pandas.svg',
+        'logos/Progressive_Web_Apps_Logo.svg.png',
+        'logos/websocket.svg',
+        'logos/arduino-1.svg',
+        'logos/Fusion360_Logo.svg.png',
+        'logos/android-icon.svg',
+        'logos/dart.svg',
+        'logos/flutter.svg',
+        'logos/swift.svg',
+        'logos/npm.svg',
+        'logos/figma.svg',
+        'logos/postman.svg',
+        'logos/google-cloud.svg',
+        'logos/graphql.svg',
+        'logos/expressjs.svg',
+        'logos/typescript.svg',
+        'logos/tensorflow-icon-light.svg',
+        'logos/fastapi.svg',
+        'logos/cloudflare.svg',
+        'logos/docker.svg',
+        'logos/sqlite.svg',
+        'logos/vitejs.svg',
+        'logos/tailwindcss.svg',
+        'logos/nextjs_icon_dark.svg',
+        'logos/json.svg',
+        'logos/webgl.svg',
+        'logos/bash.svg',
+        'logos/flask-light.svg',
+        'logos/nodejs.svg',
+        'logos/firebase.svg',
+        'logos/vscode.svg',
+        'logos/threejs-light.svg',
+        'logos/linux.svg',
+        'logos/blender.svg',
+        'logos/home-assistant.svg',
+        'logos/mongodb-icon-light.svg',
+        'logos/vercel.svg',
+        'logos/unity.svg',
+        'logos/csharp.svg',
+        'logos/python.svg',
+        'logos/css_old.svg',
+        'logos/html5.svg',
+        'logos/java.svg',
+        'logos/javascript.svg',
+        'logos/mysql-icon-light.svg',
+        'logos/react_light.svg',
+        'logos/github_light.svg'
+    ];
+
     const words = useMemo(() => {
         const temp = []
         radius = radius - 1
@@ -123,13 +174,13 @@ const Model = (scale) => {
 
     //hover and hovered need to be passed down to each individual image to detect if they are the ones being hovered
     return (
-        < group ref={model} scale={[3*scale, 3*scale, 3*scale]} >
-            <Cloud count={5} radius={7} hover={hover} hovered={hovered} />
+        < group ref={model} scale={[3 * scale, 3 * scale, 3 * scale]} >
+            <Cloud count={5} radius={10} hover={hover} hovered={hovered} />
         </group >
     )
 }
 
-export default function model( scale ) {
+export default function model(scale) {
     return (
         <>
             <div style={{
@@ -140,9 +191,9 @@ export default function model( scale ) {
                 marginRight: "6rem",
                 alignItems: "center"
             }}>
-                <Canvas style={{width: '100%', height:'70lvh', overflow: 'visible'}} gl={{ antialias: true, toneMapping: NoToneMapping }} linear  dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 90 }}>
+                <Canvas style={{ width: '100%', height: '70lvh', overflow: 'visible' }} gl={{ antialias: true, toneMapping: NoToneMapping }} linear dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 90 }}>
                     <ambientLight />
-                    <Model scale={scale} style={{overflow: 'visible'}}/>
+                    <Model scale={scale} style={{ overflow: 'visible' }} />
                     <CameraControls />
                 </Canvas>
             </div>
