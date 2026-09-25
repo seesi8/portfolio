@@ -154,12 +154,7 @@ export default function Page({ projects }) {
                 <p>Skiing</p>
                 <h2>Other About Me:</h2>
                 <p>
-                  Completed Chicago Triathalon{" "}
-                  {Math.ceil(
-                    (new Date() - new Date("08/23/2023")) /
-                      (1000 * 60 * 60 * 24 * 365.25)
-                  )}
-                  x
+                  Completed Chicago Triathlon 3x
                 </p>
                 <p>Dallas Mavericks Fan</p>
                 <p>Fighting Illini Fan</p>
@@ -189,7 +184,7 @@ export default function Page({ projects }) {
                   <div className={styles.headshot}>
                     <Image
                       src={
-                        "https://firebasestorage.googleapis.com/v0/b/portfolio-dedd9.appspot.com/o/54931ca6-a1e2-4ea3-9f51-1b6998a2dd20?alt=media&token=c9b9f166-b060-4757-b53c-52990cd3d6f0"
+                        "/headshot.jpg"
                       }
                       fill={true}
                     />
